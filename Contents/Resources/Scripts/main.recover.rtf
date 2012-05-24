@@ -1,0 +1,2246 @@
+{\rtf1\ansi\ansicpg932\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset0 Verdana;\f1\fnil\fcharset128 HiraKakuProN-W3;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red108\green5\blue211;\red0\green0\blue255;
+\red76\green78\blue78;\red64\green128\blue0;\red74\green30\blue127;\red0\green22\blue176;}
+\deftab480
+\pard\pardeftab480\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf2 property
+\b0  \cf3 name\cf2  : "XText"\
+
+\b property
+\b0  
+\i \cf4 version
+\i0 \cf2  : "1.2.1"\
+\
+\cf5 (*!@references\
+XList || help:openbook='XList Help'\
+*)\cf2 \
+\
+\cf5 (*\
+XText is a wrapper object of AppleScript's text object. XText provides object oriented interface to manipulate text and some advanced features.\
+*)\cf2 \
+\
+\cf5 (*!@title XText Reference \
+* Version : 1.2.1\
+* Author : Tetsuro KURITA ((<tkurita@mac.com>))\
+*)\cf2 \
+\
+
+\b global
+\b0  \cf6 _pre_delims\cf2 \
+\
+\cf5 --property _linefeed : ASCII character 10\cf2 \
+
+\b property
+\b0  \cf6 _white_chars\cf2  : \{\cf3 tab\cf2 , \cf3 space\cf2 , \cf3 return\cf2 , \cf3 linefeed\cf2 , 
+\i \cf4 character
+\i0 \cf2  \cf7 id\cf2  7\}\
+\
+\cf5 (*!@group Class Methods *)\cf2 \
+\
+\cf5 (*!@abstruct\
+<!-- begin locale ja -->\
+
+\f1 \'8c\'bb\'8d\'dd\'82\'cc
+\f0  AppleScript's text item delimiters 
+\f1 \'82\'f0\'95\'db\'91\'b6\'82\'b5\'82\'c4\'81\'41\'83\'65\'83\'4c\'83\'58\'83\'67\'8f\'88\'97\'9d\'82\'cc\'82\'bd\'82\'df\'82\'cc\'83\'81\'83\'5c\'83\'62\'83\'68\'82\'f0\'8c\'c4\'82\'d4\'8f\'80\'94\'f5\'82\'f0\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!-- begin locale en -->\
+Store current AppleScript's text item delimiters to prepare to call text handling routines.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+XText 
+\f1 \'82\'cc\'82\'a2\'82\'ad\'82\'c2\'82\'a9\'82\'cc\'83\'4e\'83\'89\'83\'58\'83\'81\'83\'5c\'83\'62\'83\'68\'82\'cd\'81\'41\'82\'bb\'82\'cc\'93\'ae\'8d\'ec\'92\'86\'82\'c9
+\f0  AppleScript's text item delimiters 
+\f1 \'82\'f0\'95\'cf\'8d\'58\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 XText 
+\f1 \'8e\'a9\'90\'67\'82\'cd\'81\'41
+\f0 text item delimiters 
+\f1 \'82\'cc\'95\'cf\'8d\'58\'82\'cc\'89\'65\'8b\'bf\'82\'f0\'8e\'f3\'82\'af\'82\'c8\'82\'a2\'82\'e6\'82\'a4\'82\'c9\'90\'dd\'8c\'76\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'dc\'82\'b7\'82\'aa\'81\'41\'82\'bb\'82\'ea\'88\'c8\'8a\'4f\'82\'cc\'83\'52\'81\'5b\'83\'68\'82\'d6\'82\'cc\'89\'65\'8b\'bf\'82\'f0\'94\'f0\'82\'af\'82\'e9\'88\'d7\'82\'c9\'81\'41
+\f0 XText 
+\f1 \'82\'cc\'83\'4e\'83\'89\'83\'58\'83\'81\'83\'5c\'83\'62\'83\'68\'82\'f0\'8c\'c4\'82\'d4\'91\'4f\'82\'c9\'81\'41
+\f0 store_delimiters() 
+\f1 \'82\'c9\'82\'e6\'82\'c1\'82\'c4\'8c\'bb\'8d\'dd\'82\'cc\'92\'6c\'82\'f0\'8b\'4c\'98\'5e\'82\'b5\'81\'41
+\f0 ((<restore_delimiters>))() 
+\f1 \'82\'c9\'82\'e6\'82\'c1\'82\'c4\'81\'41
+\f0 text item delimiters 
+\f1 \'82\'cc\'92\'6c\'82\'f0\'8c\'b3\'82\'c9\'96\'df\'82\'b7\'82\'cc\'82\'aa\'96\'5d\'82\'dc\'82\'b5\'82\'a2\'82\'c6\'8e\'76\'82\'a6\'82\'dc\'82\'b7\'81\'42
+\f0 \
+\
+store_delimiters() 
+\f1 \'82\'c6
+\f0  ((<restore_delimiters>))() 
+\f1 \'82\'cc\'8a\'d4\'82\'c5\'8e\'c0\'8d\'73\'82\'b7\'82\'d7\'82\'ab\'83\'6e\'83\'93\'83\'68\'83\'89\'81\'69\'82\'b7\'82\'c8\'82\'ed\'82\'bf\'81\'41
+\f0 text ite delimiters 
+\f1 \'82\'f0\'93\'e0\'95\'94\'82\'c5\'95\'cf\'8d\'58\'82\'b7\'82\'e9\'83\'6e\'83\'93\'83\'68\'83\'89\'81\'6a\'82\'cd\'82\'bb\'82\'ea\'82\'bc\'82\'ea\'82\'cc\'83\'79\'81\'5b\'83\'57\'82\'c9\'8b\'4c\'8d\'da\'82\'aa\'82\'a0\'82\'e8\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!-- begin locale en -->\
+Some class methods of XText change AppleScript's text item delimiters. To avoid affectting other codes, text item delimiters should be stored before calling the handler using store_delimiters() and should be restored after the handler using ((<restore_delimiters>))(). \
+\
+The handlers which should be called between store_delimiters() and ((<restore_delimiters>))() have descriptions in own pages.\
+<!-- end locale -->\
+@result
+\f1 \'81\'40
+\f0 none\
+*)\cf2 \
+
+\b on
+\b0  \cf6 store_delimiters\cf2 ()\
+	
+\b try
+\b0 \
+		
+\b set
+\b0  \cf6 _pre_delims\cf2  
+\b to
+\b0  [\cf3 AppleScript\cf2 's \cf3 text item delimiters\cf2 ] & \cf6 _pre_delims\cf2  \cf5 -- _pre_delims is not copied, because it's linked list\cf2 \
+	
+\b on
+\b0  
+\b error
+\b0  \cf4 number\cf2  -2753\
+		
+\b set
+\b0  \cf6 _pre_delims\cf2  
+\b to
+\b0  [\cf3 AppleScript\cf2 's \cf3 text item delimiters\cf2 ]\
+	
+\b end
+\b0  
+\b try
+\b0 \
+
+\b end
+\b0  \cf6 store_delimiters\cf2 \
+\
+\cf5 (*!\
+@abstruct\
+<!-- begin locale ja -->\
+AppleScript's text item delimiters 
+\f1 \'82\'f0
+\f0  ((<store_delimiters>))() 
+\f1 \'82\'c9\'82\'e6\'82\'c1\'82\'c4\'95\'db\'91\'b6\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'bd\'82\'e0\'82\'cc\'82\'c9\'96\'df\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!-- begin locale en -->\
+Restore a AppleScript's text item delimiters stored by previous ((<store_delimiters>))()\
+<!-- end locale -->\
+@result none\
+*)\cf2 \
+
+\b on
+\b0  \cf6 restore_delimiters\cf2 ()\
+	
+\b set
+\b0  \cf3 AppleScript\cf2 's \cf3 text item delimiters\cf2  
+\b to
+\b0  
+\i \cf4 item
+\i0 \cf2  1 
+\b of
+\b0  \cf6 _pre_delims\cf2 \
+	
+\b set
+\b0  \cf6 _pre_delims\cf2  
+\b to
+\b0  \cf3 rest\cf2  
+\b of
+\b0  \cf6 _pre_delims\cf2 \
+
+\b end
+\b0  \cf6 restore_delimiters\cf2 \
+\
+
+\b on
+\b0  \cf6 change_delimiter\cf2 (\cf6 new_delim\cf2 )\
+	
+\b set
+\b0  \cf3 AppleScript\cf2 's \cf3 text item delimiters\cf2  
+\b to
+\b0  \{\cf6 new_delim\cf2 \}\
+
+\b end
+\b0  \cf6 change_delimiter\cf2 \
+\
+
+\b on
+\b0  \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+	
+\b if
+\b0  
+\i \cf4 class
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2  
+\b is
+\b0  
+\i \cf4 script
+\i0 \cf2  
+\b then
+\b0 \
+		
+\b return
+\b0  \cf6 a_text\cf2 's \cf6 as_unicode\cf2 ()\
+	
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b return
+\b0  \cf6 a_text\cf2 \
+
+\b end
+\b0  \cf6 bare_text\cf2 \
+\
+\cf5 (*!\
+@abstruct\
+<!-- begin locale ja -->\
+
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'92\'86\'82\'c9\'8a\'dc\'82\'dc\'82\'ea\'82\'e9\'93\'c1\'92\'e8\'82\'cc\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'95\'ca\'82\'cc\'95\'b6\'8e\'9a\'97\'f1\'82\'c9\'92\'75\'8a\'b7\'82\'b5\'82\'dc\'82\'b7\'81\'42\'8c\'8b\'89\'ca\'82\'cd
+\f0  Unicode text class 
+\f1 \'82\'c9\'82\'c8\'82\'e8\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!-- begin locale en -->\
+Replace sub-texts in a text with another text. The class of the result is Unicode text.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+((<store_delimiters>))() 
+\f1 \'82\'c6
+\f0  ((<restore_delimiters>))() 
+\f1 \'82\'cc\'8a\'d4\'82\'c5\'8e\'c0\'8d\'73\'82\'b5\'82\'c4\'82\'ad\'82\'be\'82\'b3\'82\'a2\'81\'42
+\f0 \
+<!-- begin locale en -->\
+The method should be called between ((<store_delimiters>))() and ((<restore_delimiters>))()\
+<!-- end locale -->\
+@param a_text (string, Unicode text or XText) :\
+<!-- begin locale ja -->
+\f1 \'92\'75\'8a\'b7\'8f\'88\'97\'9d\'82\'f0\'8d\'73\'82\'a2\'82\'bd\'82\'a2\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+<!-- begin locale en -->a text to process<!-- end locale -->\
+@param old_text (string or Unicode text  or XText) :\
+<!-- begin locale ja -->
+\f1 \'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'bd\'82\'a2\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+<!-- begin locale en -->a text should be replaced by new_text<!-- end locale -->\
+@param new_text (string, Unicode text or XText) :\
+<!-- begin locale ja --> 
+\f1 \'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'e9\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+<!-- begin locale en -->a text should be placed instead of old_text<!-- end locale -->\
+@result\
+<!-- begin locale ja -->\
+Unicode text : a_text 
+\f1 \'82\'c9\'8a\'dc\'82\'dc\'82\'ea\'82\'e9
+\f0  old_text 
+\f1 \'82\'f0
+\f0  new_text 
+\f1 \'82\'c9\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'bd\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+<!-- begin locale en -->\
+Unicode text : a text replacing old_text with new_text\
+<!-- end locale -->\
+*)\cf2 \
+
+\b on
+\b0  \cf6 replace\cf2  \cf4 for\cf2  \cf6 a_text\cf2  \cf4 from\cf2  \cf6 old_text\cf2  \cf4 by\cf2  \cf6 new_text\cf2 \
+	
+\b set
+\b0  \cf6 old_text\cf2  
+\b to
+\b0  \cf6 bare_text\cf2 (\cf6 old_text\cf2 )\
+	
+\b set
+\b0  \cf6 new_text\cf2  
+\b to
+\b0  \cf6 bare_text\cf2 (\cf6 new_text\cf2 )\
+	\cf6 change_delimiter\cf2 (\cf6 old_text\cf2 )\
+	
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  
+\b every
+\b0  
+\i \cf4 text item
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2 \
+	\cf6 change_delimiter\cf2 (\cf6 new_text\cf2 )\
+	
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 a_list\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 \
+	
+\b return
+\b0  \cf6 a_text\cf2 \
+
+\b end
+\b0  \cf6 replace\cf2 \
+\
+\cf5 (*!\
+@abstruct\
+<!--begin locale ja-->\
+
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'8e\'77\'92\'e8\'82\'b5\'82\'bd
+\f0  delimiter 
+\f1 \'82\'c5\'95\'aa\'89\'f0\'82\'b5\'82\'bd\'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'83\'8a\'83\'58\'83\'67\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Make a list with splitting a text with specified delimiter.\
+<!--end locale-->\
+@description\
+<!--begin locale ja-->\
+((<store_delimiters>))() 
+\f1 \'82\'c6
+\f0  ((<restore_delimiters>))() 
+\f1 \'82\'cc\'8a\'d4\'82\'c5\'8e\'c0\'8d\'73\'82\'b5\'82\'c4\'82\'ad\'82\'be\'82\'b3\'82\'a2\'81\'42
+\f0 \
+a_delimiter 
+\f1 \'82\'aa
+\f0  Unicode text 
+\f1 \'82\'cc\'8f\'ea\'8d\'87\'82\'cd\'81\'41
+\f0 a_text 
+\f1 \'82\'e0
+\f0  Unicode text 
+\f1 \'82\'c5\'82\'a0\'82\'e9\'95\'4b\'97\'76\'82\'aa\'82\'a0\'82\'e8\'82\'dc\'82\'b7\'81\'42
+\f0 \
+
+\f1 \'82\'dc\'82\'bd\'95\'d4\'82\'e8\'92\'6c\'82\'cc\'83\'8a\'83\'58\'83\'67\'82\'cc\'97\'76\'91\'66\'82\'cc
+\f0  class 
+\f1 \'82\'cd
+\f0  a_text 
+\f1 \'82\'cc
+\f0  class 
+\f1 \'82\'c6\'93\'af\'82\'b6\'82\'c9\'82\'c8\'82\'e8\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+The method should be called between ((<store_delimiters>))() and ((<restore_delimiters>))()\
+If the class of a_delimiter is Unicode text, the class of a_text must be Unicode text. The classes of elements of a retuend list are same to the class of a_text.\
+<!--end locale-->\
+\
+@param a_text (string, Unicode text  or XText) :\
+<!--begin locale ja-->
+\f1 \'83\'8a\'83\'58\'83\'67\'82\'c9\'95\'aa\'89\'f0\'82\'b5\'82\'bd\'82\'a2\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+<!--begin locale en-->a text to be split into a list<!--end locale-->\
+@param a_delimiter (string, Unicode text) :\
+<!--begin locale ja-->
+\f1 \'83\'8a\'83\'58\'83\'67\'82\'c9\'95\'aa\'89\'f0\'82\'b7\'82\'e9\'8d\'db\'82\'cc\'8b\'e6\'90\'d8\'82\'e8\'95\'b6\'8e\'9a
+\f0 \
+<!--begin locale en-->a delimiter used to split a_text<!-- end locale -->\
+\
+@result list of string or Unicode text \
+*)\cf2 \
+
+\b on
+\b0  \cf6 split\cf2 (\cf6 a_text\cf2 , \cf6 a_delimiter\cf2 )\
+	\cf6 change_delimiter\cf2 (\cf6 a_delimiter\cf2 )\
+	
+\b return
+\b0  
+\b every
+\b0  
+\i \cf4 text item
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2 \
+
+\b end
+\b0  \cf6 split\cf2 \
+\
+\cf5 (*!@abstruct\
+<!--begin locale ja-->\
+string 
+\f1 \'82\'e0\'82\'b5\'82\'ad\'82\'cd
+\f0  Unicode text 
+\f1 \'82\'cc\'83\'8a\'83\'58\'83\'67\'82\'f0\'81\'41\'8e\'77\'92\'e8\'82\'b3\'82\'ea\'82\'bd\'8b\'e6\'90\'d8\'82\'e8\'95\'b6\'8e\'9a\'82\'f0\'8e\'67\'82\'c1\'82\'c4\'98\'41\'8c\'8b\'82\'b5\'82\'bd\'95\'b6\'8e\'9a\'97\'f1\'81\'69
+\f0 Unicode text
+\f1 \'81\'6a\'82\'f0\'8d\'ec\'82\'e8\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Join a list of text with specified delimiter into a Unicode text. \
+<!--end locale-->\
+ \
+@description\
+<!--begin locale ja-->\
+((<store_delimiters>))() 
+\f1 \'82\'c6
+\f0  ((<restore_delimiters>))() 
+\f1 \'82\'cc\'8a\'d4\'82\'c5\'8e\'c0\'8d\'73\'82\'b5\'82\'c4\'82\'ad\'82\'be\'82\'b3\'82\'a2\'81\'42
+\f0 \
+<!--begin locale en-->\
+The method should be called between ((<store_delimiters>))() and ((<restore_delimiters>))()\
+<!--end locale-->\
+\
+@param a_list (list) :\
+<!--begin locale ja-->string 
+\f1 \'82\'e0\'82\'b5\'82\'ad\'82\'cd
+\f0  Unicode text 
+\f1 \'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b5\'82\'bd\'83\'8a\'83\'58\'83\'67
+\f0 \
+<!--begin locale en-->a list consisting of strings or Unicode texts\
+<!--end locale-->\
+@param a_delimiter (string or Unicode text) :\
+<!--begin locale ja--> 
+\f1 \'83\'8a\'83\'58\'83\'67\'82\'cc\'90\'da\'91\'b1\'82\'c9\'8e\'67\'82\'a4\'8b\'e6\'90\'d8\'82\'e8\'95\'b6\'8e\'9a
+\f0 \
+<!--begin locale en--> a delimiter text to join a_list\
+<!--end locale-->\
+@result Unicode text\
+*)\cf2 \
+
+\b on
+\b0  \cf6 join_list\cf2 (\cf6 a_list\cf2 , \cf6 a_delimiter\cf2 )\
+	\cf6 change_delimiter\cf2 (\cf6 a_delimiter\cf2 )\
+	
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 a_list\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 \
+	
+\b return
+\b0  \cf6 a_text\cf2 \
+
+\b end
+\b0  \cf6 join_list\cf2 \
+\
+
+\b on
+\b0  \cf6 |join|\cf2 (\cf6 a_list\cf2 , \cf6 a_delimiter\cf2 )\
+	
+\b return
+\b0  \cf6 join_list\cf2 (\cf6 a_list\cf2 , \cf6 a_delimiter\cf2 )\
+
+\b end
+\b0  \cf6 |join|\cf2 \
+\
+
+\b on
+\b0  \cf6 join_as_string\cf2 (\cf6 a_list\cf2 , \cf6 a_delimiter\cf2 )\
+	
+\b return
+\b0  \cf6 join_list\cf2 (\cf6 a_list\cf2 , \cf6 a_delimiter\cf2 )\
+
+\b end
+\b0  \cf6 join_as_string\cf2 \
+\
+\cf5 (*!@abstruct\
+<!--begin locale ja-->\
+
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'90\'e6\'93\'aa\'82\'c6\'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space, tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Remove white spaces and new line characters (space, tab, return, line feed)  placed at beginning and ending of a text.\
+<!--end locale-->\
+@param a_text (string, Unicode text or XText)\
+@result string or Unicode text\
+*)\cf2 \
+
+\b on
+\b0  \cf6 strip\cf2 (\cf6 a_text\cf2 )\
+	
+\b try
+\b0 \
+		
+\b if
+\b0  (
+\b first
+\b0  
+\i \cf4 character
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2 ) 
+\b is
+\b0  
+\b in
+\b0  
+\b my
+\b0  \cf6 _white_chars\cf2  
+\b then
+\b0 \
+			
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 strip\cf2 (
+\i \cf4 text
+\i0 \cf2  2 
+\b thru
+\b0  -1 
+\b of
+\b0  \cf6 a_text\cf2 )\
+		
+\b else
+\b0  
+\b if
+\b0  (
+\b last
+\b0  
+\i \cf4 character
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2 ) 
+\b is
+\b0  
+\b in
+\b0  
+\b my
+\b0  \cf6 _white_chars\cf2  
+\b then
+\b0 \
+			
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 strip\cf2 (
+\i \cf4 text
+\i0 \cf2  1 
+\b thru
+\b0  -2 
+\b of
+\b0  \cf6 a_text\cf2 )\
+		
+\b else
+\b0 \
+			
+\b return
+\b0  \cf6 a_text\cf2 \
+		
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b on
+\b0  
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  \cf6 errn\cf2 \
+		
+\b if
+\b0  \cf3 length\cf2  
+\b of
+\b0  \cf6 a_text\cf2  
+\b is
+\b0  
+\b less than
+\b0  
+\b or
+\b0  
+\b equal to
+\b0  1 
+\b then
+\b0 \
+			
+\b return
+\b0  ""\
+		
+\b else
+\b0 \
+			
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  \cf6 errn\cf2 \
+		
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b end
+\b0  
+\b try
+\b0 \
+
+\b end
+\b0  \cf6 strip\cf2 \
+\
+\cf5 (*!@abstruct\
+<!--begin locale ja-->\
+
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'90\'e6\'93\'aa\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space , tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Remove white spaces and new line characters (space, tab, return, line feed)  placed at beginning of a text.\
+<!--end locale-->\
+\
+@param a_text (string, Unicode text or XText)\
+@result\
+<!--begin locale ja-->\
+list : a_text 
+\f1 \'82\'cc\'90\'e6\'93\'aa\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'c6\'90\'e6\'93\'aa\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'aa\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  a_text 
+\f1 \'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b7\'82\'e9
+\f0 \
+* item 1 : a_text 
+\f1 \'82\'cc\'90\'e6\'93\'aa\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+* item 2 : 
+\f1 \'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  a_text\
+<!--begin locale en-->\
+list : a_list which have following elements.\
+* item 1 : white spaces ans new line characters placed at the beginning of a_text\
+* item 2 : a text stripped white spaces ans new line characters at the beginning.\
+<!--end locale-->\
+*)\cf2 \
+
+\b on
+\b0  \cf6 strip_beginning\cf2 (\cf6 a_text\cf2 )\
+	
+\b set
+\b0  \cf6 beginning_spaces\cf2  
+\b to
+\b0  ""\
+	
+\b try
+\b0 \
+		
+\b repeat
+\b0 \
+			
+\b set
+\b0  \cf6 first_char\cf2  
+\b to
+\b0  
+\i \cf4 character
+\i0 \cf2  1 
+\b of
+\b0  \cf6 a_text\cf2 \
+			
+\b if
+\b0  \cf6 first_char\cf2  
+\b is
+\b0  
+\b in
+\b0  
+\b my
+\b0  \cf6 _white_chars\cf2  
+\b then
+\b0 \
+				
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  
+\i \cf4 text
+\i0 \cf2  2 
+\b thru
+\b0  -1 
+\b of
+\b0  \cf6 a_text\cf2 \
+				
+\b set
+\b0  \cf6 beginning_spaces\cf2  
+\b to
+\b0  \cf6 beginning_spaces\cf2  & \cf6 first_char\cf2 \
+			
+\b else
+\b0 \
+				
+\b exit
+\b0  
+\b repeat
+\b0 \
+			
+\b end
+\b0  
+\b if
+\b0 \
+		
+\b end
+\b0  
+\b repeat
+\b0 \
+	
+\b on
+\b0  
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  -1728\
+		
+\b if
+\b0  \cf3 length\cf2  
+\b of
+\b0  \cf6 a_text\cf2  
+\b is
+\b0  
+\b less than
+\b0  
+\b or
+\b0  
+\b equal to
+\b0  1 
+\b then
+\b0 \
+			
+\b set
+\b0  \cf6 beginning_spaces\cf2  
+\b to
+\b0  \cf6 beginning_spaces\cf2  & \cf6 a_text\cf2 \
+			
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  ""\
+		
+\b else
+\b0 \
+			
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  \cf6 errn\cf2 \
+		
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b end
+\b0  
+\b try
+\b0 \
+	
+\b return
+\b0  \{\cf6 beginning_spaces\cf2 , \cf6 a_text\cf2 \}\
+
+\b end
+\b0  \cf6 strip_beginning\cf2 \
+\
+\cf5 (*!\
+@abstruct\
+<!--begin locale ja-->\
+
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space , tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Remove white spaces and new line characters (space, tab, return, line feed)  placed at endding of a text.\
+<!--end locale-->\
+\
+@param a_text (string, Unicode text or XText)\
+\
+@result\
+<!--begin locale ja-->\
+list : a_text 
+\f1 \'82\'cc\'96\'96\'94\'f6\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'c6\'81\'41\'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'aa\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  a_text 
+\f1 \'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b7\'82\'e9
+\f0 \
+* item 1 : a_text 
+\f1 \'82\'cc\'96\'96\'94\'f6\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+* item 2 : 
+\f1 \'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'82\'f0\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  a_text\
+<!--begin locale en-->\
+list : a_list which have following elements.\
+* item 1 : white spaces ans new line characters placed at the endding of a_text\
+* item 2 : a text stripped white spaces ans new line characters at the endding.\
+<!--end locale-->\
+*)\cf2 \
+
+\b on
+\b0  \cf6 strip_endding\cf2 (\cf6 a_text\cf2 )\
+	
+\b set
+\b0  \cf6 endding_spaces\cf2  
+\b to
+\b0  ""\
+	
+\b try
+\b0 \
+		
+\b repeat
+\b0 \
+			
+\b set
+\b0  \cf6 last_char\cf2  
+\b to
+\b0  
+\i \cf4 character
+\i0 \cf2  -1 
+\b of
+\b0  \cf6 a_text\cf2 \
+			
+\b if
+\b0  \cf6 last_char\cf2  
+\b is
+\b0  
+\b in
+\b0  
+\b my
+\b0  \cf6 _white_chars\cf2  
+\b then
+\b0 \
+				
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  
+\i \cf4 text
+\i0 \cf2  1 
+\b thru
+\b0  -2 
+\b of
+\b0  \cf6 a_text\cf2 \
+				
+\b set
+\b0  \cf6 endding_spaces\cf2  
+\b to
+\b0  \cf6 last_char\cf2  & \cf6 endding_spaces\cf2 \
+			
+\b else
+\b0 \
+				
+\b exit
+\b0  
+\b repeat
+\b0 \
+			
+\b end
+\b0  
+\b if
+\b0 \
+		
+\b end
+\b0  
+\b repeat
+\b0 \
+	
+\b on
+\b0  
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  -1728\
+		
+\b if
+\b0  \cf3 length\cf2  
+\b of
+\b0  \cf6 a_text\cf2  
+\b is
+\b0  
+\b less than
+\b0  
+\b or
+\b0  
+\b equal to
+\b0  1 
+\b then
+\b0 \
+			
+\b set
+\b0  \cf6 endding_spaces\cf2  
+\b to
+\b0  \cf6 a_text\cf2  & \cf6 endding_spaces\cf2 \
+			
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  ""\
+		
+\b else
+\b0 \
+			
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  \cf6 errn\cf2 \
+		
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b end
+\b0  
+\b try
+\b0 \
+	
+\b return
+\b0  \{\cf6 endding_spaces\cf2 , \cf6 a_text\cf2 \}\
+
+\b end
+\b0  \cf6 strip_endding\cf2 \
+\
+\cf5 (*!@abstruct\
+<!--begin locale ja-->\
+a_text 
+\f1 \'92\'86\'82\'cc
+\f0  &quot;$1&quot;, &quot;$2&quot;... 
+\f1 \'82\'c6\'82\'a2\'82\'a4\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'81\'41
+\f0 item 1 of a_list, item 2 of a_list ... 
+\f1 \'82\'c5\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'dc\'82\'b7\'81\'42
+\f0 \
+
+\f1 \'83\'5f\'83\'43\'83\'41\'83\'8d\'83\'4f\'82\'c8\'82\'c7\'82\'c9\'95\'5c\'8e\'a6\'82\'b7\'82\'e9\'83\'81\'83\'62\'83\'5a\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'e9\'82\'cc\'82\'c9\'95\'d6\'97\'98\'82\'c5\'82\'b7\'81\'42
+\f0 \
+<!--begin locale en-->\
+Replace words of &quot;$1&quot;, &quot;$2&quot;... in a_text with item 1 of a_list, item 2 of a_list ...\
+\
+It is useful to format a message to display.\
+<!--end locale-->\
+\
+@description\
+<!--begin locale ja-->\
+((<store_delimiters>))() 
+\f1 \'82\'c6
+\f0  ((<restore_delimiters>))() 
+\f1 \'82\'cc\'8a\'d4\'82\'c5\'8e\'c0\'8d\'73\'82\'b5\'82\'c4\'82\'ad\'82\'be\'82\'b3\'82\'a2\'81\'42
+\f0 \
+<!--begin locale en-->\
+The method should be called between ((<store_delimiters>))() and ((<restore_delimiters>))()\
+<!--end locale-->\
+\
+@param a_text (string, Unicode text or XText) :\
+<!--begin locale ja--> &quot;$1&quot;, &quot;$2&quot;... 
+\f1 \'82\'c6\'82\'a2\'82\'a4\'91\'7d\'93\'fc\'8f\'ea\'8f\'8a\'82\'f0\'8e\'77\'8e\'a6\'82\'b7\'82\'e9\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'8e\'9d\'82\'c1\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67
+\f0 \
+<!--begin locale en-->a text which places to be replaced which is specified with &quot;$1&quot;, &quot;$2&quot;...\
+<!--end locale-->\
+@param a_list (list or XList) :\
+<!--begin locale ja-->a_text 
+\f1 \'92\'86\'82\'c9\'91\'7d\'93\'fc\'82\'b7\'82\'e9\'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'83\'8a\'83\'58\'83\'67
+\f0 \
+<!--begin locale en-->a list ot texts to be inserted.\
+<!--end locale-->\
+\
+@result Unicode text \
+*)\cf2 \
+
+\b on
+\b0  \cf6 formatted_text\cf2 (\cf6 a_text\cf2 , \cf6 a_list\cf2 )\
+	
+\b set
+\b0  \cf6 a_class\cf2  
+\b to
+\b0  
+\i \cf4 class
+\i0 \cf2  
+\b of
+\b0  \cf6 a_list\cf2 \
+	
+\b if
+\b0  \cf6 a_class\cf2  
+\b is
+\b0  
+\i \cf4 script
+\i0 \cf2  
+\b then
+\b0 \
+		
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 a_list\cf2 's \cf6 list_ref\cf2 ()\
+	
+\b else
+\b0  
+\b if
+\b0  \cf6 a_class\cf2  
+\b is
+\b0  
+\b not
+\b0  
+\i \cf4 list
+\i0 \cf2  
+\b then
+\b0 \
+		
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \{\cf6 a_list\cf2 \}\
+	
+\b end
+\b0  
+\b if
+\b0 \
+	
+\b repeat
+\b0  
+\b with
+\b0  \cf6 ith\cf2  
+\b from
+\b0  1 
+\b to
+\b0  (\cf3 length\cf2  
+\b of
+\b0  \cf6 a_list\cf2 )\
+		
+\b set
+\b0  \cf6 a_param\cf2  
+\b to
+\b0  
+\i \cf4 item
+\i0 \cf2  \cf6 ith\cf2  
+\b of
+\b0  \cf6 a_list\cf2 \
+		
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 replace\cf2  \cf4 for\cf2  \cf6 a_text\cf2  \cf4 from\cf2  "$" & (\cf6 ith\cf2  
+\b as
+\b0  
+\i \cf4 text
+\i0 \cf2 ) \cf4 by\cf2  \cf6 a_param\cf2 \
+	
+\b end
+\b0  
+\b repeat
+\b0 \
+	
+\b return
+\b0  \cf6 a_text\cf2 \
+
+\b end
+\b0  \cf6 formatted_text\cf2 \
+\
+
+\b on
+\b0  \cf6 formated_text\cf2  
+\b given
+\b0  \cf6 template\cf2 :\cf6 a_text\cf2 , \cf6 args\cf2 :\cf6 a_list\cf2 \
+	\cf6 formatted_text\cf2 (\cf6 a_text\cf2 , \cf6 a_list\cf2 )\
+
+\b end
+\b0  \cf6 formated_text\cf2 \
+\
+
+\b property
+\b0  \cf6 XList\cf2  : 
+\b \cf8 module
+\b0 \cf2 \
+\
+\cf5 (*!@group Constructor *)\cf2 \
+\
+\cf5 (*!@abstruct\
+<!-- begin locale ja -->\
+
+\f1 \'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd
+\f0  AppleScript 
+\f1 \'82\'cc\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'a9\'82\'e7
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+<!-- begin locale en -->\
+make a XText instance with given an AppleScript's text\
+<!-- end locale -->\
+@param a_text (Unicode text or string)\
+@result
+\f1 \'81\'40
+\f0 script object : an instance of XText\
+*)\cf2 \
+
+\b on
+\b0  \cf6 make_with\cf2 (\cf6 a_text\cf2 )\
+	
+\b set
+\b0  \cf6 class_obj\cf2  
+\b to
+\b0  
+\b me
+\b0 \
+	
+\b script
+\b0  \cf6 XText\cf2 \
+		
+\b property
+\b0  \cf6 _class_object\cf2  : \cf6 class_obj\cf2 \
+		
+\b property
+\b0  \cf3 parent\cf2  : (\cf6 a_text\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 )\
+		
+\b property
+\b0  \cf3 name\cf2  : \cf6 _class_object\cf2 's \cf3 name\cf2 \
+		\cf5 (*!@group Instance Methods *)\cf2 \
+		\cf5 (*!=== Manipulate Text *)\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'96\'96\'94\'f6\'82\'c9\'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'92\'c7\'89\'c1
+\f0 \
+		<!-- begin locale en -->\
+		Appending a passed text\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result XText : \
+		<!-- begin locale ja -->a_text 
+\f1 \'82\'f0\'96\'96\'94\'f6\'82\'c9\'92\'c7\'89\'c1\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance appending a_text<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 push\cf2 (\cf6 a_text\cf2 )\
+			\cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf3 parent\cf2  & \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 ))\
+		
+\b end
+\b0  \cf6 push\cf2 \
+		\
+		
+\b on
+\b0  \cf6 append\cf2 (\cf6 a_text\cf2 )\
+			\cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf3 parent\cf2  & \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 ))\
+		
+\b end
+\b0  \cf6 append\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'90\'e6\'93\'aa\'82\'c9\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'92\'c7\'89\'c1
+\f0 \
+		<!-- begin locale en -->\
+		Prepending a passed text\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result XText : \
+		<!-- begin locale ja -->a_text 
+\f1 \'82\'f0\'90\'e6\'93\'aa\'82\'c9\'92\'c7\'89\'c1\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance prepending a_text<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 prepend\cf2 (\cf6 a_text\cf2 )\
+			\cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 ) & \cf3 parent\cf2 )\
+		
+\b end
+\b0  \cf6 prepend\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'83\'65\'83\'4c\'83\'58\'83\'67\'82\'cc\'88\'ea\'95\'94\'82\'f0\'92\'75\'8a\'b7
+\f0 \
+		<!-- begin locale en -->\
+		Replacing sub-text\
+		<!-- end locale -->\
+		@param old_text (Unicode text, string or XText) : \
+		<!-- begin locale ja -->
+\f1 \'92\'75\'8a\'b7\'91\'ce\'8f\'db\'83\'65\'83\'4c\'83\'58\'83\'67
+\f0 \
+		<!-- begin locale en -->a text to be replaced<!-- end locale -->\
+		@param new_text (Unicode text, string or XText) : \
+		<!-- begin locale ja -->
+\f1 \'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'e9\'83\'65\'83\'4c\'83\'58\'83\'67
+\f0 \
+		<!-- begin locale en -->a text which should be placed instead of old_text<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->old_text 
+\f1 \'82\'f0
+\f0  new_text 
+\f1 \'82\'c5\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance replacing old_text to new_text<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 replace\cf2 (\cf6 old_text\cf2 , \cf6 new_text\cf2 )\
+			
+\b tell
+\b0  \cf6 _class_object\cf2 \
+				\cf6 store_delimiters\cf2 ()\
+				
+\b set
+\b0  \cf6 result_text\cf2  
+\b to
+\b0  \cf6 replace\cf2  \cf4 for\cf2  (
+\b my
+\b0  \cf3 parent\cf2 ) \cf4 from\cf2  \cf6 old_text\cf2  \cf4 by\cf2  \cf6 new_text\cf2 \
+				\cf6 restore_delimiters\cf2 ()\
+			
+\b end
+\b0  
+\b tell
+\b0 \
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf6 result_text\cf2 )\
+		
+\b end
+\b0  \cf6 replace\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'94\'cd\'88\'cd\'82\'cc\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Replacing sub-text in specefied range.\
+		<!-- end locale -->\
+		@param s_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'92\'75\'8a\'b7\'94\'cd\'88\'cd\'82\'cc\'8a\'4a\'8e\'6e\'88\'ca\'92\'75
+\f0 \
+		<!-- begin locale en -->an index of the beginning of the range\
+		<!-- end locale -->\
+		@param e_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'92\'75\'8a\'b7\'94\'cd\'88\'cd\'82\'cc\'8f\'49\'97\'b9\'88\'ca\'92\'75
+\f0 \
+		<!-- begin locale en -->an index of the ending of the range\
+		<!-- end locale -->\
+		@param new_text : (Unicode text, string or XText) :\
+		<!-- begin locale ja -->
+\f1 \'92\'75\'8a\'b7\'83\'65\'83\'4c\'83\'58\'83\'67
+\f0 \
+		<!-- begin locale en -->a new text should be placed in the range.\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'94\'cd\'88\'cd\'82\'f0
+\f0  new_text 
+\f1 \'82\'c5\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 replace_in_range\cf2 (\cf6 s_index\cf2 , \cf6 e_index\cf2 , \cf6 new_text\cf2 )\
+			
+\b if
+\b0  \cf6 s_index\cf2  
+\b is
+\b0  1 
+\b then
+\b0 \
+				
+\b set
+\b0  \cf6 pre_text\cf2  
+\b to
+\b0  ""\
+			
+\b else
+\b0 \
+				
+\b set
+\b0  \cf6 pre_text\cf2  
+\b to
+\b0  
+\i \cf4 text
+\i0 \cf2  1 
+\b thru
+\b0  (\cf6 s_index\cf2  - 1) 
+\b of
+\b0  
+\b my
+\b0  \cf3 parent\cf2 \
+			
+\b end
+\b0  
+\b if
+\b0 \
+			
+\b if
+\b0  \cf6 e_index\cf2  
+\b is
+\b0  (\cf3 length\cf2  
+\b of
+\b0  
+\b my
+\b0  \cf3 parent\cf2 ) 
+\b then
+\b0 \
+				
+\b set
+\b0  \cf6 post_text\cf2  
+\b to
+\b0  ""\
+			
+\b else
+\b0 \
+				
+\b set
+\b0  \cf6 post_text\cf2  
+\b to
+\b0  
+\i \cf4 text
+\i0 \cf2  (\cf6 e_index\cf2  + 1) 
+\b thru
+\b0  -1 
+\b of
+\b0  
+\b my
+\b0  \cf3 parent\cf2 \
+			
+\b end
+\b0  
+\b if
+\b0 \
+			
+\b set
+\b0  \cf6 new_text\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 new_text\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf6 pre_text\cf2  & \cf6 new_text\cf2  & \cf6 post_text\cf2 )\
+		
+\b end
+\b0  \cf6 replace_in_range\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'83\'65\'83\'93\'83\'76\'83\'8c\'81\'5b\'83\'67\'82\'c9\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'91\'7d\'93\'fc\'82\'b5\'82\'c4\'8f\'6f\'97\'cd\'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Output with inserting texts into the template\
+		<!-- end locale -->\
+		@description\
+		<!-- begin locale ja -->\
+		&quot;$1&quot;, &quot;$2&quot;... 
+\f1 \'82\'c6\'82\'a2\'82\'a4\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'81\'41
+\f0 item 1 of a_list, item 2 of a_list ... 
+\f1 \'82\'c5\'92\'75\'82\'ab\'8a\'b7\'82\'a6\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		
+\f1 \'83\'5f\'83\'43\'83\'41\'83\'8d\'83\'4f\'82\'c8\'82\'c7\'82\'c9\'95\'5c\'8e\'a6\'82\'b7\'82\'e9\'83\'81\'83\'62\'83\'5a\'81\'5b\'83\'57\'82\'f0\'8d\'ec\'82\'e9\'82\'cc\'82\'c9\'95\'d6\'97\'98\'82\'c5\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Replace &quot;$1&quot;, &quot;$2&quot;... with item 1 of a_list, item2 of a_list ....
+\f1 \'81\'40
+\f0 \
+		This method is useful for building a text for a message in a dialog.\
+		<!-- end locale -->\
+		\
+		@param a_list (list or XList) :\
+		<!--begin locale ja-->
+\f1 \'91\'7d\'93\'fc\'82\'b7\'82\'e9\'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'83\'8a\'83\'58\'83\'67
+\f0 \
+		<!--begin locale en-->a list ot texts to be inserted.\
+		<!--end locale-->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'83\'65\'83\'93\'83\'76\'83\'8c\'81\'5b\'83\'67\'82\'c9\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'91\'7d\'93\'fc\'82\'b7\'82\'e9\'82\'b1\'82\'c6\'82\'c9\'82\'e6\'82\'c1\'82\'c4\'93\'be\'82\'e7\'82\'ea\'82\'bd\'81\'41\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance inserted elements of a_list<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 format_with\cf2 (\cf6 a_list\cf2 )\
+			
+\b tell
+\b0  \cf6 _class_object\cf2 \
+				\cf6 store_delimiters\cf2 ()\
+				
+\b set
+\b0  \cf6 new_text\cf2  
+\b to
+\b0  \cf6 formated_text\cf2  
+\b given
+\b0  \cf6 template\cf2 :
+\b my
+\b0  \cf3 parent\cf2 , \cf6 args\cf2 :\cf6 a_list\cf2 \
+				\cf5 --set new_text to replace for (my parent) from old_text by new_text\cf2 \
+				\cf6 restore_delimiters\cf2 ()\
+			
+\b end
+\b0  
+\b tell
+\b0 \
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf6 new_text\cf2 )\
+		
+\b end
+\b0  \cf6 format_with\cf2 \
+		\
+		\cf5 (*!@abstruct \
+		<!-- begin locale ja -->\
+		
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'90\'e6\'93\'aa\'82\'c6\'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space, tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Remove white spaces and new line characters (space, tab, return, line feed) placed at the beginning and the endding.\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 strip\cf2 ()\
+			
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 strip\cf2 (
+\b my
+\b0  \cf3 parent\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 strip\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'95\'b6\'8e\'9a\'97\'f1\'82\'cc\'90\'e6\'93\'aa\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space , tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Remove white spaces and new line characters (space, tab, return, line feed) placed at the beginning. \
+		<!-- end locale -->\
+		@result \
+		<!-- begin locale ja -->\
+		list : 
+\f1 \'90\'e6\'93\'aa\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'c6\'90\'e6\'93\'aa\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'aa\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  XText 
+\f1 \'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b7\'82\'e9\'81\'42
+\f0 \
+		* item 1 : 
+\f1 \'90\'e6\'93\'aa\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+		* item 2 : 
+\f1 \'90\'e6\'93\'aa\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->\
+		list : elements are as follows\
+		* item 1 (Unicode text) :  removed blank spaces\
+		* item 2 (script object) :   a new XText instance\
+		<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 strip_beginning\cf2 ()\
+			
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 strip_beginning\cf2 (
+\b my
+\b0  \cf3 parent\cf2 )\
+			
+\b set
+\b0  
+\i \cf4 item
+\i0 \cf2  2 
+\b of
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 item
+\i0 \cf2  2 
+\b of
+\b0  \cf6 a_list\cf2 )\
+			
+\b return
+\b0  \cf6 a_list\cf2 \
+		
+\b end
+\b0  \cf6 strip_beginning\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a
+\f0  (space , tab, return, line feed) 
+\f1 \'82\'f0\'8f\'9c\'8b\'8e\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Remove white spaces and new line characters (space, tab, return, line feed) placed at the endding. \
+		<!-- end locale -->\
+		@result\
+		<!-- begin locale ja -->\
+		list : 
+\f1 \'96\'96\'94\'f6\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'c6\'81\'41\'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1\'82\'aa\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd
+\f0  XText
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0  
+\f1 \'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b7\'82\'e9
+\f0 \
+		* item 1 : 
+\f1 \'96\'96\'94\'f6\'82\'c9\'82\'a0\'82\'c1\'82\'bd\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'97\'f1
+\f0 \
+		* item 2 : 
+\f1 \'96\'96\'94\'f6\'82\'cc\'8b\'f3\'94\'92\'95\'b6\'8e\'9a\'82\'f0\'8f\'9c\'8b\'8e\'82\'b3\'82\'ea\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->\
+		list : elements are as follows\
+		* item 1 (Unicode text) :  removed blank spaces\
+		* item 2 (script object) :   a new XText instance\
+		<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 strip_endding\cf2 ()\
+			
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 strip_endding\cf2 (
+\b my
+\b0  \cf3 parent\cf2 )\
+			
+\b set
+\b0  
+\i \cf4 item
+\i0 \cf2  2 
+\b of
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 item
+\i0 \cf2  2 
+\b of
+\b0  \cf6 a_list\cf2 )\
+			
+\b return
+\b0  \cf6 a_list\cf2 \
+		
+\b end
+\b0  \cf6 strip_endding\cf2 \
+		\
+		\cf5 (*!=== Check Text Contetns *)\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		XText 
+\f1 \'82\'cc\'93\'e0\'97\'65\'82\'aa\'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'c5\'8e\'6e\'82\'dc\'82\'c1\'82\'c4\'82\'a2\'82\'e9\'82\'a9\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		If the contents of the XText starts with a given text,  ture is returned\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result boolean\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 starts_with\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b starts with
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 starts_with\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		XText 
+\f1 \'82\'cc\'93\'e0\'97\'65\'82\'aa\'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'c5\'8f\'49\'92\'5b\'82\'b5\'82\'c4\'82\'a2\'82\'e9\'82\'a9\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		If the contents of the XText ends with a given text,  ture is returned\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result boolean\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 ends_with\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b ends with
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 ends_with\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		XText 
+\f1 \'82\'cc\'93\'e0\'97\'65\'82\'aa\'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'8a\'dc\'82\'f1\'82\'c5\'82\'a2\'82\'e9\'82\'a9\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		If the contents of the XText includes a given text,  ture is returned\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result boolean\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 include\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b contains
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 include\cf2 \
+		\
+		
+\b on
+\b0  \cf6 contain_text\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b contains
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 contain_text\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		XText 
+\f1 \'82\'cc\'93\'e0\'97\'65\'82\'aa\'81\'41\'97\'5e\'82\'a6\'82\'e7\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'93\'af\'82\'b6\'95\'b6\'8e\'9a\'97\'f1\'82\'c5\'82\'a0\'82\'e9\'82\'a9\'82\'c7\'82\'a4\'82\'a9\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		If the contents of the XText is equal to a given text,  ture is returned\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText)\
+		@result boolean\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 is_equal\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b is
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 is_equal\cf2 \
+		\
+		
+\b on
+\b0  \cf6 equal_to\cf2 (\cf6 a_text\cf2 )\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b is
+\b0  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 )\
+		
+\b end
+\b0  \cf6 equal_to\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'88\'f8\'90\'94\'82\'c9\'93\'6e\'82\'b3\'82\'ea\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'cc\'88\'ca\'92\'75\'82\'f0\'92\'b2\'82\'d7\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain the position of passed text.\
+		<!-- end locale -->\
+		@param a_text (Unicode text, string or XText) : \
+		<!-- begin locale ja -->
+\f1 \'88\'ca\'92\'75\'82\'f0\'92\'b2\'82\'d7\'82\'e9\'83\'65\'83\'4c\'83\'58\'83\'67
+\f0 \
+		<!-- begin locale en -->the source text to find the position of\
+		<!-- end locale -->\
+		@result integer : \
+		<!-- begin locale ja -->a_text 
+\f1 \'82\'cc\'88\'ca\'92\'75\'81\'42\'82\'e0\'82\'b5\'8c\'a9\'82\'c2\'82\'a9\'82\'e7\'82\'c8\'82\'af\'82\'ea\'82\'ce
+\f0  0 
+\f1 \'82\'f0\'95\'d4\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->the position of the source text in the target, or 0 if not found<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 offset_of\cf2 (\cf6 a_text\cf2 )\
+			
+\b tell
+\b0  \cf3 AppleScript\cf2  
+\b to
+\b0  
+\b \cf8 offset
+\b0 \cf2  \cf8 of\cf2  \cf6 _class_object\cf2 's \cf6 bare_text\cf2 (\cf6 a_text\cf2 ) \cf8 in\cf2  (
+\b my
+\b0  \cf3 parent\cf2 )\
+			
+\b return
+\b0  \cf3 result\cf2 \
+		
+\b end
+\b0  \cf6 offset_of\cf2 \
+		\
+		\cf5 (*!=== Obtain Sub Text *)\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'88\'ca\'92\'75\'82\'cc\'95\'b6\'8e\'9a
+\f0 (character) 
+\f1 \'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain a character at specified index\
+		<!-- end locale -->\
+		@param an_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'8e\'e6\'93\'be\'82\'b7\'82\'e9\'95\'b6\'8e\'9a\'82\'cc\'88\'ca\'92\'75
+\f0 \
+		<!-- begin locale en -->the position of a character to obtain\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'95\'b6\'8e\'9a\'82\'f0\'93\'e0\'97\'65\'82\'c6\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance of which contents is a specified character.<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 character_at\cf2 (\cf6 an_index\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 character
+\i0 \cf2  \cf6 an_index\cf2  
+\b of
+\b0  \cf3 parent\cf2 )\
+		
+\b end
+\b0  \cf6 character_at\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		Obtain a word at specified index\
+		<!-- begin locale en -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'88\'ca\'92\'75\'82\'cc\'92\'50\'8c\'ea\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- end locale -->\
+		@param an_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'8e\'e6\'93\'be\'82\'b7\'82\'e9\'92\'50\'8c\'ea\'82\'cc\'88\'ca\'92\'75
+\f0 \
+		<!-- begin locale en -->the position of a word to obtain\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'92\'50\'8c\'ea\'82\'f0\'93\'e0\'97\'65\'82\'c6\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a new XText instance of which contents is a specified word.<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 word_at\cf2 (\cf6 an_index\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 word
+\i0 \cf2  \cf6 an_index\cf2  
+\b of
+\b0  \cf3 parent\cf2 )\
+		
+\b end
+\b0  \cf6 word_at\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'88\'ca\'92\'75\'82\'cc\'8d\'73\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain a paragraph at specified index\
+		<!-- end locale -->\
+		@param an_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'8e\'e6\'93\'be\'82\'b7\'82\'e9\'8d\'73\'82\'cc\'8d\'73\'94\'d4\'8d\'86
+\f0 \
+		<!-- begin locale en -->the position of a paragraph to obtain\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'8d\'73\'82\'f0\'93\'e0\'97\'65\'82\'c6\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a XText instance of which contents is a specified paragraph.<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 paragraph_at\cf2 (\cf6 an_index\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 paragraph
+\i0 \cf2  \cf6 an_index\cf2  
+\b of
+\b0  \cf3 parent\cf2 )\
+		
+\b end
+\b0  \cf6 paragraph_at\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'94\'cd\'88\'cd\'82\'cc\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain a text in a specified range of indexes\
+		<!-- end locale -->\
+		@param s_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'94\'cd\'88\'cd\'82\'cc\'8a\'4a\'8e\'6e\'88\'ca\'92\'75\'81\'69\'95\'b6\'8e\'9a\'82\'cc\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\'81\'6a
+\f0 \
+		<!-- begin locale en -->an index of the start of a range\
+		<!-- end locale -->\
+		@param e_index (integer) : \
+		<!-- begin locale ja -->
+\f1 \'94\'cd\'88\'cd\'82\'cc\'8f\'49\'97\'b9\'88\'ca\'92\'75\'81\'69\'95\'b6\'8e\'9a\'82\'cc\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\'81\'6a
+\f0 \
+		<!-- begin locale en -->an index of the end of a range\
+		<!-- end locale -->\
+		@result XText : \
+		<!-- begin locale ja -->
+\f1 \'8e\'e6\'93\'be\'82\'b5\'82\'bd\'83\'65\'83\'4c\'83\'58\'83\'67\'82\'f0\'93\'e0\'97\'65\'82\'c6\'82\'b5\'82\'bd\'90\'56\'82\'b5\'82\'a2
+\f0  XText 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'81\'42
+\f0 \
+		<!-- begin locale en -->a XText instance<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 text_in_range\cf2 (\cf6 s_index\cf2 , \cf6 e_index\cf2 )\
+			
+\b return
+\b0  \cf6 _class_object\cf2 's \cf6 make_with\cf2 (
+\i \cf4 text
+\i0 \cf2  \cf6 s_index\cf2  
+\b thru
+\b0  \cf6 e_index\cf2  
+\b of
+\b0  \cf3 parent\cf2 )\
+		
+\b end
+\b0  \cf6 text_in_range\cf2 \
+		\
+		\cf5 (*!=== Convert to List with Splitting*)\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'83\'66\'83\'8a\'83\'7e\'83\'5e\'82\'c5\'95\'aa\'8a\'84\'82\'b5\'82\'bd\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b5\'82\'bd
+\f0  ((<XList>)) 
+\f1 \'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Make a ((<XList>)) instance of which elements are text items splitted with a specified delimiter\
+		<!-- end locale -->\
+		@param (Unicode text) : \
+		<!-- begin locale ja -->
+\f1 \'8b\'e6\'90\'d8\'82\'e8\'95\'b6\'8e\'9a
+\f0 \
+		<!-- begin locale en -->a delimiter<!-- end locale -->\
+		@result XList : \
+		<!-- begin locale ja -->((<XList>)) 
+\f1 \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58
+\f0 \
+		<!-- begin locale en -->a ((<XList>)) instance<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 as_xlist_with\cf2 (\cf6 a_delimiter\cf2 )\
+			
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 as_list_with\cf2 (\cf6 a_delimiter\cf2 )\
+			
+\b return
+\b0  \cf6 XList\cf2 's \cf6 make_with\cf2 (\cf6 a_list\cf2 )\
+		
+\b end
+\b0  \cf6 as_xlist_with\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'8e\'77\'92\'e8\'82\'b5\'82\'bd\'83\'66\'83\'8a\'83\'7e\'83\'5e\'82\'c5\'95\'aa\'8a\'84\'82\'b5\'82\'bd\'95\'b6\'8e\'9a\'97\'f1\'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b5\'82\'bd\'83\'8a\'83\'58\'83\'67\'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Make a list of which elements are text items splitted with a specified delimiter\
+		<!-- end locale -->\
+		@param (Unicode text) : \
+		<!-- begin locale ja -->
+\f1 \'8b\'e6\'90\'d8\'82\'e8\'95\'b6\'8e\'9a
+\f0 \
+		<!-- begin locale en -->a delimiter<!-- end locale -->\
+		@result list\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 as_list_with\cf2 (\cf6 a_delimiter\cf2 )\
+			
+\b tell
+\b0  \cf6 _class_object\cf2 \
+				\cf6 store_delimiters\cf2 ()\
+				
+\b set
+\b0  \cf6 a_list\cf2  
+\b to
+\b0  \cf6 split\cf2 ((
+\b my
+\b0  \cf3 parent\cf2 ), \cf6 a_delimiter\cf2 )\
+				\cf6 restore_delimiters\cf2 ()\
+			
+\b end
+\b0  
+\b tell
+\b0 \
+			
+\b return
+\b0  \cf6 a_list\cf2 \
+		
+\b end
+\b0  \cf6 as_list_with\cf2 \
+		\
+		\cf5 (*!=== Convert to AppleScript's text *)\cf2 \
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'cc\'93\'e0\'97\'65\'82\'f0
+\f0  Unicode text 
+\f1 \'83\'4e\'83\'89\'83\'58\'82\'c6\'82\'b5\'82\'c4\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain contents of the XText instance with Unicode text class\
+		<!-- end locale -->\
+		@result Unicode text\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 as_text\cf2 ()\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 \
+		
+\b end
+\b0  \cf6 as_text\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		((<as_text>)) 
+\f1 \'82\'c6\'93\'af\'82\'b6\'82\'c5\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		A synonym of ((<as_text>)).\
+		<!-- end locale -->\
+		@result Unicode text\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 as_unicode\cf2 ()\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 \
+		
+\b end
+\b0  \cf6 as_unicode\cf2 \
+		\
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'cc\'93\'e0\'97\'65\'82\'f0
+\f0  script 
+\f1 \'83\'4e\'83\'89\'83\'58\'82\'c6\'82\'b5\'82\'c4\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		Obtain contents of the XText instance with string class\
+		<!-- end locale -->\
+		@result string\
+		*)\cf2 \
+		
+\b on
+\b0  \cf6 as_string\cf2 ()\
+			
+\b return
+\b0  \cf3 parent\cf2  
+\b as
+\b0  
+\i \cf4 string
+\i0 \cf2 \
+		
+\b end
+\b0  \cf6 as_string\cf2 \
+		\
+		\cf5 (*!=== Debugging *)\cf2 \
+		\cf5 (*!@abstruct\
+		<!-- begin locale ja -->\
+		
+\f1 \'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'cc\'93\'e0\'97\'65\'82\'f0
+\f0  
+\f1 \'83\'8d\'83\'4f\'8f\'6f\'97\'cd\'82\'b5\'82\'dc\'82\'b7\'81\'42
+\f0 \
+		<!-- begin locale en -->\
+		logging contents of the XText instance\
+		<!-- end locale -->\
+		*)\cf2 \
+		
+\b on
+\b0  
+\b \cf4 log
+\b0 \cf2 \
+			
+\b tell
+\b0  \cf3 AppleScript\cf2  
+\b to
+\b0  
+\b \cf4 log
+\b0 \cf2  (
+\b my
+\b0  \cf6 dump\cf2 ())\
+		
+\b end
+\b0  
+\b \cf4 log
+\b0 \cf2 \
+		\
+		
+\b on
+\b0  \cf6 dump\cf2 ()\
+			
+\b return
+\b0  "[XText] " & 
+\b my
+\b0  \cf3 parent\cf2  
+\b as
+\b0  
+\i \cf4 Unicode text
+\i0 \cf2 \
+		
+\b end
+\b0  \cf6 dump\cf2 \
+	
+\b end
+\b0  
+\b script
+\b0 \
+
+\b end
+\b0  \cf6 make_with\cf2 \
+\
+
+\b on
+\b0  \cf6 debug_test\cf2 ()\
+	
+\b tell
+\b0  (
+\b \cf8 module loader
+\b0 \cf2 )\
+		\cf6 export\cf2 (
+\b me
+\b0 )\
+		
+\b \cf8 boot
+\b0 \cf2  \cf8 for\cf2  
+\b me
+\b0 \
+		
+\b set
+\b0  \cf6 Test\cf2  
+\b to
+\b0  
+\b \cf8 load module
+\b0 \cf2  "Test"\
+	
+\b end
+\b0  
+\b tell
+\b0 \
+	\
+	
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 make_with\cf2 ("aaa")\
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf6 a_text\cf2 's \cf6 is_equal\cf2 ("aaa"), "Failed to make_with")\
+	
+\b set
+\b0  \cf6 a_text\cf2  
+\b to
+\b0  \cf6 a_text\cf2 's \cf6 append\cf2 ("bb")\
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf6 a_text\cf2 's \cf6 is_equal\cf2 ("aaabb"), "Failed to append")\
+	
+\b every
+\b0  
+\i \cf4 character
+\i0 \cf2  
+\b of
+\b0  \cf6 a_text\cf2 \
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2  
+\b is
+\b0  \{"a", "a", "a", "b", "b"\}, "Failed to every character")\
+	\cf3 length\cf2  
+\b of
+\b0  \cf6 a_text\cf2 \
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2  
+\b is
+\b0  5, "Failed to length")\
+	
+\i \cf4 text
+\i0 \cf2  1 
+\b thru
+\b0  2 
+\b of
+\b0  \cf6 a_text\cf2 \
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2  
+\b is
+\b0  "aa", "Failed to text 1 thru 2")\
+	
+\i \cf4 characters
+\i0 \cf2  1 
+\b thru
+\b0  2 
+\b of
+\b0  \cf6 a_text\cf2 \
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2  
+\b is
+\b0  \{"a", "a"\}, "Failed to characters 1 thru 2")\
+	\cf6 a_text\cf2  
+\b starts with
+\b0  "aa" \cf5 -- does not work\cf2 \
+	\cf6 Test\cf2 's \cf6 assert_false\cf2 (\cf3 result\cf2 , "Failed to starts with")\
+	\cf6 a_text\cf2 's \cf6 starts_with\cf2 ("aa")\
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2 , "Failed to starts_with")\
+	\cf6 a_text\cf2 's \cf6 as_xlist_with\cf2 ("b")'s \cf6 list_ref\cf2 ()\
+	\cf6 Test\cf2 's \cf6 assert_true\cf2 (\cf3 result\cf2  
+\b is
+\b0  \{"aaa", "", ""\}, "Failed to starts_with")\
+
+\b end
+\b0  \cf6 debug_test\cf2 \
+\
+
+\b on
+\b0  \cf6 debug\cf2 ()\
+	
+\b \cf8 boot
+\b0 \cf2  (
+\b \cf8 module loader
+\b0 \cf2 ) \cf8 for\cf2  
+\b me
+\b0 \
+	
+\b set
+\b0  \cf6 s\cf2  
+\b to
+\b0  "
+\f1 \'8c\'cb\'92\'6a
+\f0 	
+\f1 \'88\'f3
+\f0 \
+"\
+	
+\b set
+\b0  \cf6 c\cf2  
+\b to
+\b0  
+\b last
+\b0  
+\i \cf4 character
+\i0 \cf2  
+\b of
+\b0  \cf6 s\cf2 \
+	"\
+" 
+\b is
+\b0  
+\b in
+\b0  
+\b my
+\b0  \cf6 _white_chars\cf2 \
+	
+\b \cf4 log
+\b0 \cf2  \cf3 id\cf2  
+\b of
+\b0  \cf6 c\cf2 \
+	
+\b \cf4 log
+\b0 \cf2  \cf3 id\cf2  
+\b of
+\b0  \cf3 return\cf2 \
+	\cf5 --strip_endding(s)\cf2 \
+
+\b end
+\b0  \cf6 debug\cf2 \
+\
+
+\b on
+\b0  
+\b \cf4 run
+\b0 \cf2 \
+	\cf5 --return debug()\cf2 \
+	\cf5 --return debug_test()\cf2 \
+	
+\b try
+\b0 \
+		
+\b \cf8 show helpbook
+\b0 \cf2  (
+\b \cf8 path to
+\b0 \cf2  
+\b me
+\b0 ) 
+\b with
+\b0  \cf8 recovering InfoPlist\cf2 \
+	
+\b on
+\b0  
+\b error
+\b0  \cf6 msg\cf2  \cf4 number\cf2  \cf6 errno\cf2 \
+		
+\b \cf8 display alert
+\b0 \cf2  (\cf6 msg\cf2  & \cf3 return\cf2  & \cf6 errno\cf2 )\
+	
+\b end
+\b0  
+\b try
+\b0 \
+
+\b end
+\b0  
+\b \cf4 run
+\b0 \cf2 \
+}

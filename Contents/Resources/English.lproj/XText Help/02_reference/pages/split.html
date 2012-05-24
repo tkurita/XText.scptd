@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>split</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="split, XText" />
+		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+		<link href="../../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="smartheader">
+			<div class="to-root">
+			<a href="../index.html">XText Reference </a>
+			</div>
+			<div class="edit-script-link">
+			<a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="split" name="split">split</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">split</span><span class="normal">(</span><span class="userDefine">a_text</span><span class="normal">, </span><span class="userDefine">a_delimiter</span><span class="normal">)</span>
+<a href="../assets/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>Make a list with splitting a text with specified delimiter.</p>
+
+<p>The method should be called between <a href="store_delimiters.html">store_delimiters</a>() and <a href="restore_delimiters.html">restore_delimiters</a>()If the class of a_delimiter is Unicode text, the class of a_text must be Unicode text. The classes of elements of a retuend list are same to the class of a_text.</p>
+
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_text (string, Unicode text  or XText) :
+a text to be split into a list</li>
+<li>a_delimiter (string, Unicode text) :
+a delimiter used to split a_text
+</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>list of string or Unicode text </p>
+		</div>
+	</body>
+
+</html>

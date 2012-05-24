@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>split</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="split, XText" />
+		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+		<link href="../../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="smartheader">
+			<div class="to-root">
+			<a href="../index.html">XText Reference </a>
+			</div>
+			<div class="edit-script-link">
+			<a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="split" name="split">split</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">split</span><span class="normal">(</span><span class="userDefine">a_text</span><span class="normal">, </span><span class="userDefine">a_delimiter</span><span class="normal">)</span>
+<a href="../assets/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>文字列を指定した delimiter で分解した文字列のリストを取得します。</p>
+
+<p><a href="store_delimiters.html">store_delimiters</a>() と <a href="restore_delimiters.html">restore_delimiters</a>() の間で実行してください。a_delimiter が Unicode text の場合は、a_text も Unicode text である必要があります。また返り値のリストの要素の class は a_text の class と同じになります。</p>
+
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_text (string, Unicode text  or XText) :
+リストに分解したい文字列
+</li>
+<li>a_delimiter (string, Unicode text) :
+リストに分解する際の区切り文字
+
+</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>list of string or Unicode text </p>
+		</div>
+	</body>
+
+</html>
