@@ -15,12 +15,14 @@
 	</head>
 
 	<body>
-		<div id="smartheader">
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
 			<div class="to-root">
 			<a href="../index.html">XText Reference </a>
 			</div>
-			<div class="edit-script-link">
-			<a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a>
 			</div>
 		</div>
 		<div id="contents">
@@ -34,6 +36,8 @@
 </a></p>
 <p>Replace words of &quot;$1&quot;, &quot;$2&quot;... in a_text with item 1 of a_list, item 2 of a_list ...</p>
 <p>It is useful to format a message to display.</p>
+
+
 
 <p>The method should be called between <a href="store_delimiters.html">store_delimiters</a>() and <a href="restore_delimiters.html">restore_delimiters</a>()</p>
 
