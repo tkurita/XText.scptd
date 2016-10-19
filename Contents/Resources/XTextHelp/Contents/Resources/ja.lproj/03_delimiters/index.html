@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- InstanceBegin template="../../../../../_Templates/helpbook-page.dwt" -->
+
+    <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <title>Managements of AppleScript's text item delimiters</title>
+      
+      <meta name="description" content="XText を使えば、text item dellimiters の管理が簡単になります。" />
+      
+      <meta name="keywords" content="XText, AppleScript's text item delimiters, テキスト" />
+      <!-- #BeginHeadLocked "" -->
+        <link href="../../en.lproj/01_synopsis/assets/helpbook-default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="../../en.lproj/01_synopsis/assets/helpbook-navibar.css" type="text/css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="../../en.lproj/01_synopsis/assets/navibar-jump.js"></script>
+      <!-- #EndHeadLocked -->
+    </head>
+
+    <body>
+      <!-- InstanceBeginEditable name="navi-bar" --><div id="navi-bar"><span class="navibar-item"><a href="../index.html">XText Help</a></span><span class="navibar-item">Managements of AppleScript's text item delimiters</span></div>
+<div class="prev-next-item"><a href="../02_reference/index.html"><span class="navibar-prev">XText Reference </span></a>|<a href="../04_history/index.html"><span class="navibar-next">History</span></a></div><!-- InstanceEndEditable -->
+      <div id="contents">
+        <!-- InstanceBeginEditable name="Body" -->
+          <h1>Managements of AppleScript's text item delimiters</h1>
+          
+          <p>AppleScript では、「AppleScript's text item delimiters」を変更してstring(Unicode text)- list間の変換を行うことにより、さまざまなテキスト処理が可能です。しかし、AppleScript's text item delimiters をカチャカチャ切り替えたスクリプトは煩雑になりがちです。そもそも「AppleScript's text item delimiters」と書くのさえめんどくさいものです。</p>
+          
+          <p>AppleScript's text item delimiters は AppleScript runtime のインスタンスのグローバル変数です。多くの場合、スクリプトを実行しているプロセスの中で共有されて、プロセスが終了するまでデフォルト値 <code>{&quot;&quot;}に</code>もどりません。もし AppleScript's text item delimiters がデフォルト値であることを仮定したスクリプトを書いた場合、AppleScript's text item delimiters が変更されているとそのスクリプトはまともに動かないことになります。たとえば、スクリプトメニューで、あるスクリプトが AppleScript's text item delimiters を変更すると、次に実行するスクリプトに影響を与える可能性があります。</p>
+          <p>ですから、</p>
+          <ul>
+            <li>AppleScript's text item delimiters がデフォルト値であることを仮定しない。</li>
+            <li>AppleScript's text item delimiters を変更したら元に戻す。</li>
+          </ul>
+          <p>ということをする必要があります。XText ではこのような負担を最小限にするために、<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() と <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() というハンドラを用意しています。</p>
+          
+          <p><a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() が呼ばれる度に、global 変数 "_pre_delims" にその時の AppleScript 's text item delimiters を付け足します。<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() を呼ぶことで、AppelScript's text item delimiters を元の値に戻します。<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() の間では、AppelScript's text item delimiters を自由に替えることができます。</p>
+          <p>XText のインスタンスメソッドは、処理中に AppleScript's text item delimiters を変更しても必ず元に戻します。</p>
+          <p>一方、次のクラスメソッドは、AppleScript's text item delimiters を変更します。つまり、<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() の間で実行されることを仮定しています。</p>
+          
+          <ul>
+            <li><a href="../02_reference/pages/replace.html">replace</a></li>
+            <li><a href="../02_reference/pages/split.html">split</a></li>
+            <li><a href="../02_reference/pages/join_list.html">join_list</a></li>
+            <li><a href="../02_reference/pages/formatted_text.html">formatted_text</a></li>
+          </ul>
+          
+          <p><a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() はネストすることができます。「<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>()」と「<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>()」が呼ばれる回数が同じなら最終的に AppleScript's text item delimiters の値はもとに戻ります。途中で「<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>()」を呼んだ回数が、「<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>()」を呼んだ回数をこえてはいけません。</p>
+          
+          <p>「_pre_delims」は、global 変数ですから、XText のコピーがスクリプト中に複数あっても値は共有されます。何らかの都合によって、XText が複数存在してもかまいません。</p>
+          <!-- InstanceEndEditable --></div>
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="10" region="0" t="DateTime" w="72">Sun, Apr 22, 2012</csobj> ; <csobj format="LongTime" h="10" region="0" t="DateTime" w="45">4:27:30 PM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
+
+  <!-- InstanceEnd -->
+
+</html>

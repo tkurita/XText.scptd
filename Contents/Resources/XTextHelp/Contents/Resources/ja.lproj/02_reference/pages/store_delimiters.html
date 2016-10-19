@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>store_delimiters</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="store_delimiters, XText" />
+		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+        <link id="helpviewer-handler-helper" href="../assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="../assets-helpbook/helpviewer-handler-enable.js"></script>
+		<link href="../../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScriptWithBundleRoot(this)" href="../assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">XText Reference </a>
+			</div>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="store_delimiters" name="store_delimiters">store_delimiters</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">store_delimiters</span><span class="normal">()</span>
+<a href="../assets-helpbook/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets-helpbook/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>現在の AppleScript's text item delimiters を保存して、テキスト処理のためのメソッドを呼ぶ準備をします。</p>
+
+
+
+<p>XText のいくつかのクラスメソッドは、その動作中に AppleScript's text item delimiters を変更します。XText 自身は、text item delimiters の変更の影響を受けないように設計されていますが、それ以外のコードへの影響を避ける為に、XText のクラスメソッドを呼ぶ前に、store_delimiters() によって現在の値を記録し、<a href="restore_delimiters.html">restore_delimiters</a>() によって、text item delimiters の値を元に戻すのが望ましいと思えます。</p>
+<p>store_delimiters() と <a href="restore_delimiters.html">restore_delimiters</a>() の間で実行すべきハンドラ（すなわち、text ite delimiters を内部で変更するハンドラ）はそれぞれのページに記載があります。</p>
+
+		</div>
+	</body>
+
+</html>

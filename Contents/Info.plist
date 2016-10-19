@@ -2,20 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleGetInfoString</key>
-	<string>1.2.2 copyright 2007-2015, Tetsuro KURITA</string>
+	<key>CFBundleName</key>
+	<string>XText</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>XText Help</string>
+	<string>XTextHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>XText Help</string>
+	<string>net.script-factory.XText.help</string>
 	<key>CFBundleIdentifier</key>
-	<string>Scriptfactory.XText</string>
+	<string>net.script-factory.XText</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.2</string>
+	<string>1.3</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.2</string>
+	<string>1.3</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright 2007-2015, Tetsuro KURITA</string>
+	<string>Copyright 2007-2016, Tetsuro KURITA</string>
 	<key>WindowState</key>
 	<dict>
 		<key>bundleDividerCollapsed</key>
@@ -31,7 +31,7 @@
 		<key>positionOfDivider</key>
 		<real>378</real>
 		<key>savedFrame</key>
-		<string>44 214 723 663 0 0 1440 877 </string>
+		<string>499 197 723 663 0 0 1440 877 </string>
 		<key>selectedTab</key>
 		<string>description</string>
 	</dict>
