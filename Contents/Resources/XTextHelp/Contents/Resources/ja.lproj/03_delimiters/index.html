@@ -3,282 +3,59 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-	<head>
-		<title>XText Reference </title>
-		
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<link href="assets/default.css" type="text/css" rel="stylesheet" media="all" />
-        <link href="assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
-		<meta name="keywords" content="XText, AppleScript" />
-		<script type="text/javascript" src="assets-helpbook/run_helpscript.js"></script>
-		<script type="text/javascript" src="assets/navibar-jump.js"></script>
-        <link id="helpviewer-handler-helper" href="assets-helpbook/helpviewer-handler-helper.scpt" />
-        <script type="text/javascript" src="assets-helpbook/helpviewer-handler-enable.js"></script>
-        <link href="../" id="HelpBookRoot" />
-	</head>
+  <!-- InstanceBegin template="../../../../../_Templates/helpbook-page.dwt" -->
 
-	<body>
-		<div id="navi-bar">
-			<div class="edit-script-link">
-				<a onclick="return runHelpScriptWithBundleRoot(this)" href="assets-helpbook/editScript.scpt">Edit Script</a>
-			</div>
-			<div class="left-contents">
-			<div class="to-root">
-				<!-- InstanceBeginEditable name="to-root" --><a href="../index.html">XText Help</a><!-- InstanceEndEditable -->
-			</div>
-			<select onchange="navibarJump(this)">
-<option value="">
-§
-</option>
-<option value="#Class_Methods">
-Class Methods
-</option>
-<option value="#store_delimiters">
-- store_delimiters
-</option>
-<option value="#restore_delimiters">
-- restore_delimiters
-</option>
-<option value="#replace">
-- replace
-</option>
-<option value="#split">
-- split
-</option>
-<option value="#join_list">
-- join_list
-</option>
-<option value="#strip">
-- strip
-</option>
-<option value="#strip_beginning">
-- strip_beginning
-</option>
-<option value="#strip_endding">
-- strip_endding
-</option>
-<option value="#formatted_text">
-- formatted_text
-</option>
-<option value="#Constructor">
-Constructor
-</option>
-<option value="#make_with">
-- make_with
-</option>
-<option value="#Instance_Methods">
-Instance Methods
-</option>
-<option value="#ManipulateText">
-- Manipulate Text
-</option>
-<option value="#push">
-- push
-</option>
-<option value="#prepend">
-- prepend
-</option>
-<option value="#replace_1">
-- replace
-</option>
-<option value="#replace_in_range">
-- replace_in_range
-</option>
-<option value="#format_with">
-- format_with
-</option>
-<option value="#strip_1">
-- strip
-</option>
-<option value="#strip_beginning_1">
-- strip_beginning
-</option>
-<option value="#strip_endding_1">
-- strip_endding
-</option>
-<option value="#CheckTextContetns">
-- Check Text Contetns
-</option>
-<option value="#starts_with">
-- starts_with
-</option>
-<option value="#ends_with">
-- ends_with
-</option>
-<option value="#include">
-- include
-</option>
-<option value="#is_equal">
-- is_equal
-</option>
-<option value="#offset_of">
-- offset_of
-</option>
-<option value="#ObtainSubText">
-- Obtain Sub Text
-</option>
-<option value="#character_at">
-- character_at
-</option>
-<option value="#word_at">
-- word_at
-</option>
-<option value="#paragraph_at">
-- paragraph_at
-</option>
-<option value="#text_in_range">
-- text_in_range
-</option>
-<option value="#ConverttoListwithSplitting">
-- Convert to List with Splitting
-</option>
-<option value="#as_xlist_with">
-- as_xlist_with
-</option>
-<option value="#as_list_with">
-- as_list_with
-</option>
-<option value="#ConverttoAppleScript'stext">
-- Convert to AppleScript's text
-</option>
-<option value="#as_text">
-- as_text
-</option>
-<option value="#as_unicode">
-- as_unicode
-</option>
-<option value="#as_string">
-- as_string
-</option>
-<option value="#Debugging">
-- Debugging
-</option>
-<option value="#log">
-- log
-</option>
-</select>
-			</div>
-		</div>
-		<!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../02_reference/index.html"><span class="navibar-prev">XText Reference </span></a>|<a href="../04_history/index.html"><span class="navibar-next">History</span></a></div><!-- InstanceEndEditable -->
-		<div id="contents">
-		<h1>XText Reference </h1>
-<ul>
-<li>Version : 1.3</li>
-<li>Author : Tetsuro KURITA <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
-<li>Requirements : OS X 10.9 or later</li>
-<li><a href="http://www.script-factory.net/XModules/XText/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/XText/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/XText.scptd">Repository</a> </li>
-</ul>
-<p>XText is a wrapper object of AppleScript's text object. XText provides object oriented interface to manipulate text and some advanced features.</p>
-<h2 id="Class_Methods">Class Methods</h2>
-<h3 id="store_delimiters"><a href="pages/store_delimiters.html">store_delimiters</a></h3>
-<p>現在の AppleScript's text item delimiters を保存して、テキスト処理のためのメソッドを呼ぶ準備をします。</p>
+    <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <title>Managements of AppleScript's text item delimiters</title>
+      
+      <meta name="description" content="XText を使えば、text item dellimiters の管理が簡単になります。" />
+      
+      <meta name="keywords" content="XText, AppleScript's text item delimiters, テキスト" />
+      <!-- #BeginHeadLocked "" -->
+        <link href="../../en.lproj/01_synopsis/assets/helpbook-default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="../../en.lproj/01_synopsis/assets/helpbook-navibar.css" type="text/css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="../../en.lproj/01_synopsis/assets/navibar-jump.js"></script>
+      <!-- #EndHeadLocked -->
+    </head>
 
-<h3 id="restore_delimiters"><a href="pages/restore_delimiters.html">restore_delimiters</a></h3>
-<p>AppleScript's text item delimiters を <a href="pages/store_delimiters.html">store_delimiters</a>() によって保存されていたものに戻します。</p>
+    <body>
+      <!-- InstanceBeginEditable name="navi-bar" --><div id="navi-bar"><span class="navibar-item"><a href="../index.html">XText Help</a></span><span class="navibar-item">Managements of AppleScript's text item delimiters</span></div>
+<div class="prev-next-item"><a href="../02_reference/index.html"><span class="navibar-prev">XText Reference </span></a></div><!-- InstanceEndEditable -->
+      <div id="contents">
+        <!-- InstanceBeginEditable name="Body" -->
+          <h1>Managements of AppleScript's text item delimiters</h1>
+          
+          <p>AppleScript では、「AppleScript's text item delimiters」を変更して text と list 間の変換を行うことにより、さまざまなテキスト処理が可能です。しかし、AppleScript's text item delimiters をカチャカチャ切り替えたスクリプトは煩雑になりがちです。そもそも「AppleScript's text item delimiters」と書くのさえめんどくさいものです。</p>
+          
+          <p>AppleScript's text item delimiters は AppleScript runtime のインスタンスのグローバル変数です。多くの場合、スクリプトを実行しているプロセスの中で共有されて、プロセスが終了するまでデフォルト値 <code>{&quot;&quot;}に</code>もどりません。もし AppleScript's text item delimiters がデフォルト値であることを仮定したスクリプトを書いた場合、AppleScript's text item delimiters が変更されているとそのスクリプトはまともに動かないことになります。たとえば、スクリプトメニューで、あるスクリプトが AppleScript's text item delimiters を変更すると、次に実行するスクリプトに影響を与える可能性があります。</p>
+          <p>ですから、</p>
+          <ul>
+            <li>AppleScript's text item delimiters がデフォルト値であることを仮定しない。</li>
+            <li>AppleScript's text item delimiters を変更したら元に戻す。</li>
+          </ul>
+          <p>ということをする必要があります。XText ではこのような負担を最小限にするために、<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() と <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() というハンドラを用意しています。</p>
+          
+          <p><a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() が呼ばれる度に、global 変数 "_pre_delims" にその時の AppleScript 's text item delimiters を付け足します。<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() を呼ぶことで、AppelScript's text item delimiters を元の値に戻します。<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() の間では、AppelScript's text item delimiters を自由に替えることができます。</p>
+          <p>XText のインスタンスメソッドは、処理中に AppleScript's text item delimiters を変更しても必ず元に戻します。</p>
+          <p>一方、次のクラスメソッドは、AppleScript's text item delimiters を変更します。つまり、<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() の間で実行されることを仮定しています。</p>
+          
+          <ul>
+            <li><a href="../02_reference/pages/replace.html">replace</a></li>
+            <li><a href="../02_reference/pages/split.html">split</a></li>
+            <li><a href="../02_reference/pages/join_list.html">join_list</a></li>
+            <li><a href="../02_reference/pages/formatted_text.html">formatted_text</a></li>
+          </ul>
+          
+          <p><a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>() 〜 <a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>() はネストすることができます。「<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>()」と「<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>()」が呼ばれる回数が同じなら最終的に AppleScript's text item delimiters の値はもとに戻ります。途中で「<a href="../02_reference/pages/restore_delimiters.html">restore_delimiters</a>()」を呼んだ回数が、「<a href="../02_reference/pages/store_delimiters.html">store_delimiters</a>()」を呼んだ回数をこえてはいけません。</p>
+          
+          <p>「_pre_delims」は、global 変数ですから、XText のコピーがスクリプト中に複数あっても値は共有されます。何らかの都合によって、XText が複数存在してもかまいません。</p>
+          <!-- InstanceEndEditable --></div>
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="10" region="0" t="DateTime" w="67">Fri, Feb 10, 2017</csobj> ; <csobj format="LongTime" h="10" region="0" t="DateTime" w="50">11:19:34 PM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
 
-<h3 id="replace"><a href="pages/replace.html">replace</a></h3>
-<p>文字列の中に含まれる特定の文字列を別の文字列に置換します。結果は Unicode text class になります。</p>
-
-<h3 id="split"><a href="pages/split.html">split</a></h3>
-<p>文字列を指定した delimiter で分解した文字列のリストを取得します。</p>
-
-<h3 id="join_list"><a href="pages/join_list.html">join_list</a></h3>
-<p>string もしくは Unicode text のリストを、指定された区切り文字を使って連結した文字列（Unicode text）を作ります。</p>
-
-<h3 id="strip"><a href="pages/strip.html">strip</a></h3>
-<p>文字列の先頭と末尾の空白文字 (space, tab, return, line feed, BEL) を除去します。</p>
-
-<h3 id="strip_beginning"><a href="pages/strip_beginning.html">strip_beginning</a></h3>
-<p>文字列の先頭の空白文字 (space , tab, return, line feed, BEL) を除去します。</p>
-
-<h3 id="strip_endding"><a href="pages/strip_endding.html">strip_endding</a></h3>
-<p>文字列の末尾の空白文字 (space , tab, return, line feed, BEL) を除去します。</p>
-
-<h3 id="formatted_text"><a href="pages/formatted_text.html">formatted_text</a></h3>
-<p>a_text 中の &quot;$1&quot;, &quot;$2&quot;... という文字列を、item 1 of a_list, item 2 of a_list ... で置き換えます。ダイアログなどに表示するメッセージを作るのに便利です。</p>
-
-<h2 id="Constructor">Constructor</h2>
-<h3 id="make_with"><a href="pages/make_with.html">make_with</a></h3>
-<p>与えられた AppleScript のテキストから XText のインスタンスを生成します。</p>
-
-<h2 id="Instance_Methods">Instance Methods</h2>
-<h3 id="ManipulateText">Manipulate Text</h3>
-<h3 id="push"><a href="pages/push.html">push</a></h3>
-<p>末尾に与えられたテキストを追加</p>
-
-<h3 id="prepend"><a href="pages/prepend.html">prepend</a></h3>
-<p>先頭にテキストを追加</p>
-
-<h3 id="replace_1"><a href="pages/replace_1.html">replace</a></h3>
-<p>テキストの一部を置換</p>
-
-<h3 id="replace_in_range"><a href="pages/replace_in_range.html">replace_in_range</a></h3>
-<p>指定した範囲のテキストを置き換えます。</p>
-
-<h3 id="format_with"><a href="pages/format_with.html">format_with</a></h3>
-<p>テンプレートに文字列を挿入して出力を生成します。</p>
-
-<h3 id="strip_1"><a href="pages/strip_1.html">strip</a></h3>
-<p>文字列の先頭と末尾の空白文字 (space, tab, return, line feed) を除去します。</p>
-
-<h3 id="strip_beginning_1"><a href="pages/strip_beginning_1.html">strip_beginning</a></h3>
-<p>文字列の先頭の空白文字 (space , tab, return, line feed) を除去します。</p>
-
-<h3 id="strip_endding_1"><a href="pages/strip_endding_1.html">strip_endding</a></h3>
-<p>末尾の空白文字 (space , tab, return, line feed) を除去します。</p>
-
-<h3 id="CheckTextContetns">Check Text Contetns</h3>
-<h3 id="starts_with"><a href="pages/starts_with.html">starts_with</a></h3>
-<p>XText の内容が与えられたテキストで始まっているか。</p>
-
-<h3 id="ends_with"><a href="pages/ends_with.html">ends_with</a></h3>
-<p>XText の内容が与えられたテキストで終端しているか。</p>
-
-<h3 id="include"><a href="pages/include.html">include</a></h3>
-<p>XText の内容が与えられたテキストを含んでいるか。</p>
-
-<h3 id="is_equal"><a href="pages/is_equal.html">is_equal</a></h3>
-<p>XText の内容が、与えられたテキスト同じ文字列であるかどうか。</p>
-
-<h3 id="offset_of"><a href="pages/offset_of.html">offset_of</a></h3>
-<p>引数に渡されたテキストの位置を調べます。</p>
-
-<h3 id="ObtainSubText">Obtain Sub Text</h3>
-<h3 id="character_at"><a href="pages/character_at.html">character_at</a></h3>
-<p>指定した位置の文字(character) を取得します。</p>
-
-<h3 id="word_at"><a href="pages/word_at.html">word_at</a></h3>
-<p>Obtain a word at specified index</p>
-
-<h3 id="paragraph_at"><a href="pages/paragraph_at.html">paragraph_at</a></h3>
-<p>指定した位置の行を取得します。</p>
-
-<h3 id="text_in_range"><a href="pages/text_in_range.html">text_in_range</a></h3>
-<p>指定した範囲のテキストを取得します。</p>
-
-<h3 id="ConverttoListwithSplitting">Convert to List with Splitting</h3>
-<h3 id="as_xlist_with"><a href="pages/as_xlist_with.html">as_xlist_with</a></h3>
-<p>指定したデリミタで分割した文字列を要素とした <a href="help:openbook='XList Help'">XList</a> を生成します。</p>
-
-<h3 id="as_list_with"><a href="pages/as_list_with.html">as_list_with</a></h3>
-<p>指定したデリミタで分割した文字列を要素としたリストを生成します。</p>
-
-<h3 id="ConverttoAppleScript'stext">Convert to AppleScript's text</h3>
-<h3 id="as_text"><a href="pages/as_text.html">as_text</a></h3>
-<p>インスタンスの内容を Unicode text クラスとして取得します。</p>
-
-<h3 id="as_unicode"><a href="pages/as_unicode.html">as_unicode</a></h3>
-<p><a href="pages/as_text.html">as_text</a> と同じです。</p>
-
-<h3 id="as_string"><a href="pages/as_string.html">as_string</a></h3>
-<p>インスタンスの内容を script クラスとして取得します。</p>
-
-<h3 id="Debugging">Debugging</h3>
-<h3 id="log"><a href="pages/log.html">log</a></h3>
-<p>インスタンスの内容を ログ出力します。</p>
-
-		</div>
-		<!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../02_reference/index.html"><span class="navibar-prev">XText Reference </span></a>|<a href="../04_history/index.html"><span class="navibar-next">History</span></a></div><!-- InstanceEndEditable -->
-	</body>
+  <!-- InstanceEnd -->
 
 </html>
