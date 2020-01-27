@@ -20,15 +20,15 @@
 	<string>4.0</string>
 	<key>HPDBookAccessPath</key>
 	<string>index.html</string>
+	<key>HPDBookIconPath</key>
+	<string>AppleScript32@2x.png</string>
 	<key>HPDBookIndexPath</key>
 	<string>search.helpindex</string>
 	<key>HPDBookKBProduct</key>
 	<string>XText</string>
 	<key>HPDBookTitle</key>
-	<string>XText Help</string>
+	<string>XText Reference </string>
 	<key>HPDBookType</key>
 	<string>3</string>
-	<key>HPDBookIconPath</key>
-	<string>AppleScript32@2x.png</string>
 </dict>
 </plist>
