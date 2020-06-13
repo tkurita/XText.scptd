@@ -79,10 +79,10 @@ Constructor
 <option value="#make_with">
 - make_with
 </option>
-<option value="#make_with_xlist">
-- make_with_xlist
+<option value="#make_with_list">
+- make_with_list
 </option>
-<option value="#make_with_xlist_1">
+<option value="#make_with_xlist">
 - make_with_xlist
 </option>
 <option value="#Instance_Methods">
@@ -157,11 +157,8 @@ Instance Methods
 <option value="#as_list">
 - as_list
 </option>
-<option value="#split_as">
-- split_as
-</option>
 <option value="#ConverttoAppleScript'stext">
-- Convert to AppleScript's text
+- Convert to AppleScript&apos;s text
 </option>
 <option value="#as_text">
 - as_text
@@ -190,21 +187,21 @@ Instance Methods
 <li>Requirements : OS X 10.9 or later</li>
 <li><a href="http://www.script-factory.net/XModules/XText/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/XText/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/XText.scptd">Repository</a> </li>
 </ul>
-<p>XText is a wrapper object of AppleScript's text object. XText provides object oriented interface to manipulate text and some advanced features.</p>
-<p>XText is a wrapper object of AppleScript's text object to provide object oriented interface to manipulate text. You can describe complex text handlings with simple statements.</p>
-<p>The parent of instances of XText is AppleScript's text object. Therefore ...Properties of AppleScript's text can be obtained form a XText instance in same way to normal AppleScript's text object (string and Unicode text).e.g., length of a_text, word 1 of a_textAn instance of XText is immutable like string or Unicode class object.</p>
+<p>XText is a wrapper object of AppleScript&apos;s text object. XText provides object oriented interface to manipulate text and some advanced features.</p>
+<p>XText is a wrapper object of AppleScript&apos;s text object to provide object oriented interface to manipulate text. You can describe complex text handlings with simple statements.</p>
+<p>The parent of instances of XText is AppleScript&apos;s text object. Therefore ...Properties of AppleScript&apos;s text can be obtained form a XText instance in same way to normal AppleScript&apos;s text object (string and Unicode text).e.g., length of a_text, word 1 of a_textAn instance of XText is immutable like string or Unicode class object.</p>
 <p>There are same purpose methods in the both of class methods and instance methods (e.g., repace, split and so on). But there are folloing differeces.</p>
 <ul>
 <li>Class methods
 <ul>
 <li>Return text object.</li>
-<li>AppleScript's text item delimiters must be managed by yourself using store_delimiters and restore_delimiters</li>
+<li>AppleScript&apos;s text item delimiters must be managed by yourself using store_delimiters and restore_delimiters</li>
 </ul>
 </li>
 <li>Instance methods
 <ul>
 <li>Return a new XText instance.</li>
-<li>AppleScript's text item delimiters is not reverted to the value before calling instance methods automatically.</li>
+<li>AppleScript&apos;s text item delimiters is not reverted to the value before calling instance methods automatically.</li>
 </ul>
 </li>
 </ul>
@@ -422,9 +419,9 @@ Instance Methods
 </div>
 <h2 id="Class_Methods">Class Methods</h2>
 <h3 id="store_delimiters"><a href="pages/store_delimiters.html">store_delimiters</a></h3>
-<p>Store current AppleScript's text item delimiters to prepare to call text handling routines.</p>
+<p>Store current AppleScript&apos;s text item delimiters to prepare to call text handling routines.</p>
 <h3 id="restore_delimiters"><a href="pages/restore_delimiters.html">restore_delimiters</a></h3>
-<p>Restore a AppleScript's text item delimiters stored by previous <a href="pages/store_delimiters.html">store_delimiters</a>()</p>
+<p>Restore a AppleScript&apos;s text item delimiters stored by previous <a href="pages/store_delimiters.html">store_delimiters</a>()</p>
 <h3 id="replace"><a href="pages/replace.html">replace</a></h3>
 <p>Replace sub texts</p>
 <h3 id="split"><a href="pages/split.html">split</a></h3>
@@ -444,10 +441,10 @@ Instance Methods
 <p>Generate formatted text using printf command.</p>
 <h2 id="Constructor">Constructor</h2>
 <h3 id="make_with"><a href="pages/make_with.html">make_with</a></h3>
-<p>Make a XText instance with given an AppleScript's text</p>
-<h3 id="make_with_xlist"><a href="pages/make_with_xlist.html">make_with_xlist</a></h3>
+<p>Make a XText instance with given an AppleScript&apos;s text</p>
+<h3 id="make_with_list"><a href="pages/make_with_list.html">make_with_list</a></h3>
 <p>Make a XText instance by joining a list by a delimiter.</p>
-<h3 id="make_with_xlist_1"><a href="pages/make_with_xlist_1.html">make_with_xlist</a></h3>
+<h3 id="make_with_xlist"><a href="pages/make_with_xlist.html">make_with_xlist</a></h3>
 <p>Make a XText instance by joining elements of a <a href="help:openbook='net.script-factory.XList.help'">XList</a> instance by by a delimiter.</p>
 <h2 id="Instance_Methods">Instance Methods</h2>
 <h3 id="ManipulateText">Manipulate Text</h3>
@@ -492,9 +489,7 @@ Instance Methods
 <p>Make a list of which elements are text items splitted with specified delimiters</p>
 <h3 id="as_list"><a href="pages/as_list.html">as_list</a></h3>
 <p>Make a list by splitting the text with current text item delimiters.</p>
-<h3 id="split_as"><a href="pages/split_as.html">split_as</a></h3>
-<p>Return instance of the class object given with a list generated by splitting the text by delimiters.</p>
-<h3 id="ConverttoAppleScript'stext">Convert to AppleScript's text</h3>
+<h3 id="ConverttoAppleScript'stext">Convert to AppleScript&apos;s text</h3>
 <h3 id="as_text"><a href="pages/as_text.html">as_text</a></h3>
 <p>Obtain contents of the XText instance with Unicode text class</p>
 <h3 id="as_unicode"><a href="pages/as_unicode.html">as_unicode</a></h3>
