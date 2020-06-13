@@ -79,6 +79,12 @@ Constructor
 <option value="#make_with">
 - make_with
 </option>
+<option value="#make_with_xlist">
+- make_with_xlist
+</option>
+<option value="#make_with_xlist_1">
+- make_with_xlist
+</option>
 <option value="#Instance_Methods">
 Instance Methods
 </option>
@@ -145,11 +151,14 @@ Instance Methods
 <option value="#ConverttoListwithSplitting">
 - Convert to List with Splitting
 </option>
-<option value="#as_xlist_with">
-- as_xlist_with
-</option>
 <option value="#as_list_with">
 - as_list_with
+</option>
+<option value="#as_list">
+- as_list
+</option>
+<option value="#split_as">
+- split_as
 </option>
 <option value="#ConverttoAppleScript'stext">
 - Convert to AppleScript's text
@@ -176,8 +185,8 @@ Instance Methods
 		<div id="contents">
 		<h1>XText Reference </h1>
 <ul>
-<li>Version : 1.3.2</li>
-<li>Author : Tetsuro KURITA <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
+<li>Version : 1.4</li>
+<li>Author : Kurita Tetsuro <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
 <li>Requirements : OS X 10.9 or later</li>
 <li><a href="http://www.script-factory.net/XModules/XText/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/XText/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/XText.scptd">Repository</a> </li>
 </ul>
@@ -265,7 +274,7 @@ Instance Methods
 <h3 id="UsingInstanceMethods">Using Instance Methods</h3>
 <div class="sourceCode">
 <div class="scriptButton">
-    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20XText%20:%20script%20%22XText%22%0D%0D(*%20Make%20a%20XText%20Instance%20*)%0Dset%20a_text%20to%20XText%27s%20make_with(%22this%20is%20a%20pen%22)%0D%0D(*Replacing%20*)%0Dlog%20a_text%27s%20replace(%22pen%22,%20%22flower%22)%0D--%20result%20:%20%5BXText%5D%20this%20is%20a%20flower%0D%0D(*%20Appending%20and%20Prepennding%20*)%0Dset%20spaced_text%20to%20a_text%27s%20prepend(return%20%26%20tab)%0Dset%20spaced_text%20to%20spaced_text%27s%20push(space)%0D%0Dlog%20spaced_text%0D(*%5BXText%5D%20%0D%09this%20is%20a%20pen%20*)%0D%0D(*%20Stripping%20*)%0Dlog%20spaced_text%27s%20strip()%20--%20result%20:%20%5BXText%5D%20this%20is%20a%20pen%0D%0Dset%20a_result%20to%20spaced_text%27s%20strip_beginning()%0Dlog%20item%201%20of%20a_result%0D(*%0D%09*)%0Dlog%20item%202%20of%20a_result%0D--%20result%20:%20%5BXText%5D%20this%20is%20a%20pen%0D%0Dset%20a_result%20to%20spaced_text%27s%20strip_endding()%0Dlog%20item%201%20of%20a_result%0D(*%20*)%0Dlog%20item%202%20of%20a_result%0D(*%5BXText%5D%20%0D%09this%20is%20a%20pen*)%0D%0D(*Check%20Contents%20*)%0Dlog%20a_text%27s%20starts_with(%22this%22)%20--%20(*true" />
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20XText%20:%20script%20%22XText%22%0D%0D(*%20Make%20a%20XText%20Instance%20*)%0Dset%20x_text%20to%20XText%27s%20make_with(%22this%20is%20a%20pen%22)%0Dset%20x_text%20to%20XText%27s%20make_with_list(%7B%22this%22,%20%22is%22,%20%22a%22,%20%22pen%22%7D,%20space)%0D%0D(*Replacing%20*)%0Dlog%20x_text%27s%20replace(%22pen%22,%20%22flower%22)%0D--%20result%20:%20%5BXText%5D%20this%20is%20a%20flower%0D%0D(*%20Appending%20and%20Prepennding%20*)%0Dset%20spaced_text%20to%20x_text%27s%20prepend(return%20%26%20tab)%0Dset%20spaced_text%20to%20spaced_text%27s%20push(space)%0D%0Dlog%20spaced_text%0D(*%5BXText%5D%20%0D%09this%20is%20a%20pen%20*)%0D%0D(*%20Stripping%20*)%0Dlog%20spaced_text%27s%20strip()%20--%20result%20:%20%5BXText%5D%20this%20is%20a%20pen%0D%0Dset%20a_result%20to%20spaced_text%27s%20strip_beginning()%0Dlog%20item%201%20of%20a_result%0D(*%0D%09*)%0Dlog%20item%202%20of%20a_result%0D--%20result%20:%20%5BXText%5D%20this%20is%20a%20pen%0D%0Dset%20a_result%20to%20spaced_text%27s%20strip_endding()%0Dlog%20item%201%20of%20a_result%0D(*%20*)%0Dlog%20item%202%20of%20a_result%0D(*%5BXText%5D%20%0D%09this%20is%20a%20pen*)%0D%0D(*Check%20Contents%20*)%0Dlog%20x_text%27s%20starts_with(%22this%22)%20--%20(*true*)%0Dlog%20x_text%27s%20ends_with(%22this%22)%20--%20(*false*)%0Dlog%20x_text%27s%20include(%22is%22)%20--%20(*true*)%0Dlog%20x_text%27s%20offset_of(%22is%22)%20--%20(*3*)%0D%0D(*%20Make%20a%20list%20with%20splitting%20*)%0Dlog%20x_text%27s%20as_list_with(space)%20--%20result%20:%20%7B%22this%22,%20%22is%22,%20%22a%22,%20%22pen%22%7D%0D%0D(*%20Obtain%20a%20part%20of%20text%20*)%0Dlog%20x_text%27s%20character_at(1)%20--%20result%20:%20%5BXText%5D%20t%0Dlog%20x_text%27s%20word_at(1)%20--%20%20result%20:%20%5BXText%5D%20this%0Dlog%20x_text%27s%20paragraph_at(1)%20--%20result%20:%20%5BXText%5D%20this%20is%20a%20pen%0D%0D(*%20Obtain%20of%20AppleScript%27s%20text%20properties%20*)%0Dlog%20character%201%20of%20x_text%20--%20result%20:%20%22t%22%0Dlog%20word%201%20of%20x_text%20--%20result%20:%20%22this%22%20%0Dlog%20length%20of%20x_text%20--%20result%20:%2013%0D%0D(*%20Obtain%20content%20as%20AppleScript%27s%20text%20*)%0Dlog%20x_text%27s%20as_text()%20--(*this%20is%20a%20pen*)" />
 </div><div>
 <span class="langKeyword">use</span> <span class="userDefine">XText</span><span class="normal"> : </span><span class="className">script</span><span class="normal"> &quot;XText&quot;</span>
 </div>
@@ -274,14 +283,17 @@ Instance Methods
 <span class="comment">(* Make a XText Instance *)</span>
 </div>
 <div>
-<span class="langKeyword">set</span> <span class="userDefine">a_text</span> <span class="langKeyword">to</span> <span class="userDefine">XText's</span> <span class="userDefine">make_with</span><span class="normal">(&quot;this is a pen&quot;)</span>
+<span class="langKeyword">set</span> <span class="userDefine">x_text</span> <span class="langKeyword">to</span> <span class="userDefine">XText's</span> <span class="userDefine">make_with</span><span class="normal">(&quot;this is a pen&quot;)</span>
+</div>
+<div>
+<span class="langKeyword">set</span> <span class="userDefine">x_text</span> <span class="langKeyword">to</span> <span class="userDefine">XText's</span> <span class="userDefine">make_with_list</span><span class="normal">({&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;pen&quot;}, </span><span class="propertyName">space</span><span class="normal">)</span>
 </div>
 <br />
 <div>
 <span class="comment">(*Replacing *)</span>
 </div>
 <div>
-<span class="commandName">log</span> <span class="userDefine">a_text's</span> <span class="userDefine">replace</span><span class="normal">(&quot;pen&quot;, &quot;flower&quot;)</span>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">replace</span><span class="normal">(&quot;pen&quot;, &quot;flower&quot;)</span>
 </div>
 <div>
 <span class="comment">-- result : [XText] this is a flower</span>
@@ -291,7 +303,7 @@ Instance Methods
 <span class="comment">(* Appending and Prepennding *)</span>
 </div>
 <div>
-<span class="langKeyword">set</span> <span class="userDefine">spaced_text</span> <span class="langKeyword">to</span> <span class="userDefine">a_text's</span> <span class="userDefine">prepend</span><span class="normal">(</span><span class="propertyName">return</span><span class="normal"> &amp; </span><span class="propertyName">tab</span><span class="normal">)</span>
+<span class="langKeyword">set</span> <span class="userDefine">spaced_text</span> <span class="langKeyword">to</span> <span class="userDefine">x_text's</span> <span class="userDefine">prepend</span><span class="normal">(</span><span class="propertyName">return</span><span class="normal"> &amp; </span><span class="propertyName">tab</span><span class="normal">)</span>
 </div>
 <div>
 <span class="langKeyword">set</span> <span class="userDefine">spaced_text</span> <span class="langKeyword">to</span> <span class="userDefine">spaced_text's</span> <span class="userDefine">push</span><span class="normal">(</span><span class="propertyName">space</span><span class="normal">)</span>
@@ -356,7 +368,56 @@ Instance Methods
 <span class="comment">(*Check Contents *)</span>
 </div>
 <div>
-<span class="commandName">log</span> <span class="userDefine">a_text's</span> <span class="userDefine">starts_with</span><span class="normal">(&quot;this&quot;) </span><span class="comment">-- (*true</span>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">starts_with</span><span class="normal">(&quot;this&quot;) </span><span class="comment">-- (*true*)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">ends_with</span><span class="normal">(&quot;this&quot;) </span><span class="comment">-- (*false*)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">include</span><span class="normal">(&quot;is&quot;) </span><span class="comment">-- (*true*)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">offset_of</span><span class="normal">(&quot;is&quot;) </span><span class="comment">-- (*3*)</span>
+</div>
+<br />
+<div>
+<span class="comment">(* Make a list with splitting *)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">as_list_with</span><span class="normal">(</span><span class="propertyName">space</span><span class="normal">) </span><span class="comment">-- result : {&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;pen&quot;}</span>
+</div>
+<br />
+<div>
+<span class="comment">(* Obtain a part of text *)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">character_at</span><span class="normal">(1) </span><span class="comment">-- result : [XText] t</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">word_at</span><span class="normal">(1) </span><span class="comment">--  result : [XText] this</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">paragraph_at</span><span class="normal">(1) </span><span class="comment">-- result : [XText] this is a pen</span>
+</div>
+<br />
+<div>
+<span class="comment">(* Obtain of AppleScript's text properties *)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="className">character</span><span class="normal"> 1 </span><span class="langKeyword">of</span> <span class="userDefine">x_text</span> <span class="comment">-- result : &quot;t&quot;</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="className">word</span><span class="normal"> 1 </span><span class="langKeyword">of</span> <span class="userDefine">x_text</span> <span class="comment">-- result : &quot;this&quot; </span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="propertyName">length</span> <span class="langKeyword">of</span> <span class="userDefine">x_text</span> <span class="comment">-- result : 13</span>
+</div>
+<br />
+<div>
+<span class="comment">(* Obtain content as AppleScript's text *)</span>
+</div>
+<div>
+<span class="commandName">log</span> <span class="userDefine">x_text's</span> <span class="userDefine">as_text</span><span class="normal">() </span><span class="comment">--(*this is a pen*)</span>
 </div>
 </div>
 <h2 id="Class_Methods">Class Methods</h2>
@@ -365,7 +426,7 @@ Instance Methods
 <h3 id="restore_delimiters"><a href="pages/restore_delimiters.html">restore_delimiters</a></h3>
 <p>Restore a AppleScript's text item delimiters stored by previous <a href="pages/store_delimiters.html">store_delimiters</a>()</p>
 <h3 id="replace"><a href="pages/replace.html">replace</a></h3>
-
+<p>Replace sub texts</p>
 <h3 id="split"><a href="pages/split.html">split</a></h3>
 <p>Make a list with splitting a text with specified delimiter.</p>
 <h3 id="join_list"><a href="pages/join_list.html">join_list</a></h3>
@@ -377,13 +438,17 @@ Instance Methods
 <h3 id="strip_endding"><a href="pages/strip_endding.html">strip_endding</a></h3>
 <p>Remove white spaces and new line characters (space, tab, return, line feed, BEL)  placed at endding of a text.</p>
 <h3 id="formatted_text"><a href="pages/formatted_text.html">formatted_text</a></h3>
-<p>Replace words of &quot;$1&quot;, &quot;$2&quot;... in a_text with item 1 of a_list, item 2 of a_list ...</p>
+<p>Replace words of “$1”, “$2”... in a_text with item 1 of a_list, item 2 of a_list ...</p>
 <p>It is useful to format a message to display.</p>
 <h3 id="sprintf"><a href="pages/sprintf.html">sprintf</a></h3>
 <p>Generate formatted text using printf command.</p>
 <h2 id="Constructor">Constructor</h2>
 <h3 id="make_with"><a href="pages/make_with.html">make_with</a></h3>
-<p>make a XText instance with given an AppleScript's text</p>
+<p>Make a XText instance with given an AppleScript's text</p>
+<h3 id="make_with_xlist"><a href="pages/make_with_xlist.html">make_with_xlist</a></h3>
+<p>Make a XText instance by joining a list by a delimiter.</p>
+<h3 id="make_with_xlist_1"><a href="pages/make_with_xlist_1.html">make_with_xlist</a></h3>
+<p>Make a XText instance by joining elements of a <a href="help:openbook='net.script-factory.XList.help'">XList</a> instance by by a delimiter.</p>
 <h2 id="Instance_Methods">Instance Methods</h2>
 <h3 id="ManipulateText">Manipulate Text</h3>
 <h3 id="push"><a href="pages/push.html">push</a></h3>
@@ -391,7 +456,7 @@ Instance Methods
 <h3 id="prepend"><a href="pages/prepend.html">prepend</a></h3>
 <p>Prepending a passed text</p>
 <h3 id="replace_1"><a href="pages/replace_1.html">replace</a></h3>
-<p>Replacing sub-text</p>
+<p>Replace sub text</p>
 <h3 id="replace_in_range"><a href="pages/replace_in_range.html">replace_in_range</a></h3>
 <p>Replacing sub-text in specefied range.</p>
 <h3 id="format_with"><a href="pages/format_with.html">format_with</a></h3>
@@ -423,10 +488,12 @@ Instance Methods
 <h3 id="text_in_range"><a href="pages/text_in_range.html">text_in_range</a></h3>
 <p>Obtain a text in a specified range of indexes</p>
 <h3 id="ConverttoListwithSplitting">Convert to List with Splitting</h3>
-<h3 id="as_xlist_with"><a href="pages/as_xlist_with.html">as_xlist_with</a></h3>
-<p>Make a <a href="help:openbook='net.script-factory.XList.help'">XList</a> instance of which elements are text items splitted with a specified delimiter</p>
 <h3 id="as_list_with"><a href="pages/as_list_with.html">as_list_with</a></h3>
-<p>Make a list of which elements are text items splitted with a specified delimiter</p>
+<p>Make a list of which elements are text items splitted with specified delimiters</p>
+<h3 id="as_list"><a href="pages/as_list.html">as_list</a></h3>
+<p>Make a list by splitting the text with current text item delimiters.</p>
+<h3 id="split_as"><a href="pages/split_as.html">split_as</a></h3>
+<p>Return instance of the class object given with a list generated by splitting the text by delimiters.</p>
 <h3 id="ConverttoAppleScript'stext">Convert to AppleScript's text</h3>
 <h3 id="as_text"><a href="pages/as_text.html">as_text</a></h3>
 <p>Obtain contents of the XText instance with Unicode text class</p>
