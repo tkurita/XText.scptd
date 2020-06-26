@@ -14,10 +14,8 @@ Japanese :
 Reqirements :
 * OS X 10.9 or later.
 * [OpenHelpBook]
-* [XList]
 
 [OpenHelpBook]: https://www.script-factory.net/XModules/OpenHelpBook/en/index.html
-[XList]: https://www.script-factory.net/XModules/XList/en/index.html
 
 ## Licence
 
